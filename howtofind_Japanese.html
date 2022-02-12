@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>The Kainoki Treebank</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="headline1">
+<h1>The Kainoki Treebank &ndash; a parsed corpus of contemporary Japanese</h1>
+</div>
+
+<ul class="navbar">
+<li><a href="index.html">Front page</a><br><a href="front_page_Japanese.html">フロント・ページ</a>
+<li><a href="invitation.html">An invitation to the user</a><br><a href="invitation_Japanese.html">統語解析情報付きコーパスのすすめ</a>
+<li class="active"><a href="howtofind.html">Example search patterns</a><br>###Example search patterns###
+<li><a href="http://160.16.203.55/dev/cgi-bin/overview.sh?db=Kainoki" target="_blank">Search interface<br>検索インターフェース</a>
+<li><a href="Kainoki_guide.html">Parsing Guide</a><br><a href="Kainoki_guide_j.html">パーシングガイド</a>
+<li><a href="acknowledgements.html">Acknowledgements of support</a><br><a href="acknowledgements_Japanese.html">研究支援について</a>
+<li><a href="whoisEdKainoki.html">Who is Ed Kainoki?</a><br><a href="whoisEdKainoki_Japanese.html">エド・カイノキとは誰ですか？</a>
+<li><a href="contact.html">Contact</a><br><a href="contact_Japanese.html">連絡先</a>
+<li><a href="https://github.com/kainoki/data/releases/tag/release" target="_blank">Download<br>ダウンロード</a>
+<li><a href="http://160.16.203.55/dev/">Ecosystem</a>
+</ul>
+
+<h1>Example search patterns</h1>
+
+
+<h2><a name="sec1">1</a>&nbsp;&nbsp;&nbsp;受動文</h2>
+
+<h3><a name="sec1.1">1.1</a>&nbsp;&nbsp;&nbsp;直接受動文</h3>
+
+<p align="justify">〇パターン (<a href="#ex1">1</a>) により、コーパス中の直接受動文をすべて検索することができる。受動の助動詞およびそれに先行する姉妹として論理主語のタグがあらわれる文を検索する (<tt>PASS</tt> が <tt>*</tt> を直接支配する「てある」構文を排除)。</p>
+
+<dl>
+  <dt>(<a name="ex1">1</a>)</dt><dd><tt>&sol;LGS&sol;&nbsp;&lt;&nbsp;&lowbar;&lowbar;&nbsp;&#x24;..&nbsp;(&sol;PASS&#92;b&sol;&nbsp;!&lt;&nbsp;&sol;&#94;&#92;*&sol;)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/LGS/ < __ $.. (/PASS\b/ !< /^\*/)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex2">2</a>) により、論理的主語が明示されない直接受動文をコーパス中から検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex2">2</a>)</dt><dd><tt>&sol;LGS&sol;&nbsp;&lt;&nbsp;&sol;&#94;&#92;*&sol;&nbsp;&#x24;..&nbsp;(&sol;PASS&#92;b&sol;&nbsp;!&lt;&nbsp;&sol;&#94;&#92;*&sol;)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/LGS/ < /^\*/ $.. (/PASS\b/ !< /^\*/)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex3">3</a>) により、論理的主語が明示された直接受動文をコーパス中から得ることができる。</p>
+
+<dl>
+  <dt>(<a name="ex3">3</a>)</dt><dd><tt>&sol;LGS&sol;&nbsp;!&lt;&nbsp;&sol;&#94;&#92;*&sol;&nbsp;&#x24;..&nbsp;(&sol;PASS&#92;b&sol;&nbsp;!&lt;&nbsp;&sol;&#94;&#92;*&sol;)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/LGS/ !< /^\*/ $.. (/PASS\b/ !< /^\*/)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex4">4</a>) により、論理的主語が格助詞「によって」により明示された直接受動文をコーパス中から得ることができる。</p>
+
+<dl>
+  <dt>(<a name="ex4">4</a>)</dt><dd><tt>&sol;PP-LGS&sol;&nbsp;&lt;&nbsp;(&sol;P-ROLE&sol;&nbsp;&lt;&nbsp;&sol;によって&sol;)&nbsp;&#x24;..&nbsp;(&sol;PASS&#92;b&sol;&nbsp;!&lt;&nbsp;&sol;&#94;&#92;*&sol;)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/PP-LGS/ < (/P-ROLE/ < /によって/) $.. (/PASS\b/ !< /^\*/)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<h3><a name="sec1.2">1.2</a>&nbsp;&nbsp;&nbsp;間接受動文</h3>
+
+<p align="justify">〇パターン (<a href="#ex5">5</a>) により、コーパス中の間接受動文をすべて検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex5">5</a>)</dt><dd><tt>&sol;LGS&sol;&nbsp;&lt;&nbsp;&lowbar;&lowbar;&nbsp;&#x24;..&nbsp;&sol;PASS2&#92;b&sol;</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/LGS/ < __ $.. /PASS2\b/"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex6">6</a>) により、論理的主語が明示されない間接受動文を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex6">6</a>)</dt><dd><tt>&sol;LGS&sol;&nbsp;&lt;&nbsp;&sol;&#94;&#92;*&sol;&nbsp;&#x24;..&nbsp;&sol;PASS2&#92;b&sol;</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/LGS/ < /^\*/ $.. /PASS2\b/"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<h2><a name="sec2">2</a>&nbsp;&nbsp;&nbsp;使役文</h2>
+
+<p align="justify">〇パターン (<a href="#ex7">7</a>) により、コーパス中の使役文を検索できる。</p>
+
+<dl>
+  <dt>(<a name="ex7">7</a>)</dt><dd><tt>&sol;CZZ&sol;&nbsp;&lt;&nbsp;&lowbar;&lowbar;&nbsp;&#x24;..&nbsp;(&sol;VB2&sol;&nbsp;&lt;&nbsp;&sol;&#94;させ|&#94;せ&sol;)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/CZZ/ < __ $.. (/VB2/ < /^させ|^せ/)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex8">8</a>) により、他動詞から作られた使役文を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex8">8</a>)</dt><dd><tt>&sol;OB1&sol;&nbsp;&#x24;..&nbsp;(&sol;VB2&sol;&nbsp;&lt;&nbsp;&sol;&#94;させ|&#94;せ&sol;)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/OB1/ $.. (/VB2/ < /^させ|^せ/)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex9">9</a>) により、自動詞から作られた使役文を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex9">9</a>)</dt><dd><tt>&sol;VB2&sol;&nbsp;&lt;&nbsp;&sol;&#94;させ|&#94;せ&sol;&nbsp;!&#x24;,,&nbsp;&sol;OB1&sol;</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/VB2/ < /^させ|^せ/ !$,, /OB1/"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex10">10</a>) により、被使役者を「を」で表示する使役文を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex10">10</a>)</dt><dd><tt>&sol;P-CZZ&sol;&nbsp;&lt;&nbsp;(&sol;P-ROLE&sol;&nbsp;&lt;&nbsp;&sol;を&sol;)&nbsp;&#x24;..&nbsp;(&sol;VB2&sol;&nbsp;&lt;&nbsp;&sol;&#94;させ|&#94;せ&sol;)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/P-CZZ/ < (/P-ROLE/ < /を/) $.. (/VB2/ < /^させ|^せ/)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex11">11</a>) により、使役受動文を検索できる。</p>
+
+<dl>
+  <dt>(<a name="ex11">11</a>)</dt><dd><tt>&sol;VB2&sol;&nbsp;&lt;&nbsp;&sol;&#94;させ|&#94;せ&sol;&nbsp;&#x24;.&nbsp;&sol;PASS&sol;</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/VB2/ < /^させ|^せ/ $. /PASS/"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<h2><a name="sec3">3</a>&nbsp;&nbsp;&nbsp;補助動詞あげる&sol;くれる&sol;もらう</h2>
+
+<p align="justify">〇パターン (<a href="#ex12">12</a>) によって、受益者が「に」で表示される、補助動詞「くれる」を伴う文を検索できる。</p>
+
+<dl>
+  <dt>(<a name="ex12">12</a>)</dt><dd><tt>&sol;VB2&sol;&nbsp;&lt;&nbsp;&sol;&#94;くれ&sol;&nbsp;&#x24;,,&nbsp;(&sol;PP-OB2&sol;&nbsp;&lt;&nbsp;(&sol;P-ROLE&sol;&nbsp;&nbsp;&lt;&nbsp;に))</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/VB2/ < /^くれ/ $,, (/PP-OB2/ < (/P-ROLE/ < に))"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex13">13</a>) によって、使役文に補助動詞「もらう」が後続する文が検索できる。</p>
+
+<dl>
+  <dt>(<a name="ex13">13</a>)</dt><dd><tt>&sol;IP-SMC-OB1&sol;&nbsp;&lt;&nbsp;(&sol;VB2&sol;&nbsp;&lt;&nbsp;&sol;&#94;させ|&#94;せ&sol;)&nbsp;&#x24;..&nbsp;(&sol;&#94;VB&#92;b&sol;&nbsp;&lt;&nbsp;&sol;&#94;もら&sol;)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/IP-SMC-OB1/ < (/VB2/ < /^させ|^せ/) $.. (/^VB\b/ < /^もら/)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<h2><a name="sec4">4</a>&nbsp;&nbsp;&nbsp;テンス</h2>
+
+<p align="justify">〇パターン (<a href="#ex14">14</a>) によって、主節・従属節ともに「た」によってテンス表示されている文が検索できる。</p>
+
+<dl>
+  <dt>(<a name="ex14">14</a>)</dt><dd><tt>&sol;SCON|CND&sol;&nbsp;&lt;&nbsp;(&sol;IP-ADV&sol;&nbsp;&lt;&nbsp;&sol;AXD&sol;)&nbsp;&#x24;..&nbsp;&sol;AXD&sol;</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/SCON|CND/ < (/IP-ADV/ < /AXD/) $.. /AXD/"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<h2><a name="sec5">5</a>&nbsp;&nbsp;&nbsp;疑問文</h2>
+
+<p align="justify">〇パターン (<a href="#ex15">15</a>) によって、疑問詞をともなう疑問文が検索できる (埋め込まれた疑問節を排除)。</p>
+
+<dl>
+  <dt>(<a name="ex15">15</a>)</dt><dd><tt>&sol;CP-QUE&sol;&nbsp;&lt;&lt;&nbsp;&sol;&#94;W&sol;&nbsp;!&gt;&nbsp;&sol;&#94;CP|&#94;IP&sol;</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/CP-QUE/ << /^W/ !> /^CP|^IP/"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">*以下のようにすると、どのようなファイルについても、埋め込まれた疑問節を排除して疑問文を検索できる。</p>
+
+<dl>
+  <dt>(<a name="ex16">16</a>)</dt><dd><tt>&sol;&#94;CP-QUE&sol;&nbsp;[&nbsp;&gt;&nbsp;TOP&nbsp;|&nbsp;&#x24;&nbsp;ID&nbsp;]</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/^CP-QUE/ [ > TOP | $ ID ]"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex17">17</a>) によって、「の&sol;ん」を伴う疑問文が検索できる。</p>
+
+<dl>
+  <dt>(<a name="ex17">17</a>)</dt><dd><tt>&sol;CP-QUE&sol;&nbsp;&lt;&nbsp;(&sol;IP-SUB&sol;&nbsp;&lt;&nbsp;(&sol;&#94;FN&sol;&nbsp;&lt;&nbsp;&sol;の|ん&sol;))&nbsp;!&gt;&nbsp;&sol;&#94;CP|&#94;IP&sol;</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/CP-QUE/ < (/IP-SUB/ < (/^FN/ < /の|ん/)) !> /^CP|^IP/"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex18">18</a>) によって、否定疑問文が検索できる。</p>
+
+<dl>
+  <dt>(<a name="ex18">18</a>)</dt><dd><tt>&sol;CP-QUE&sol;&nbsp;&lt;&nbsp;(&sol;IP-SUB&sol;&nbsp;&lt;&nbsp;&sol;&#94;NEG&#92;b&sol;)&nbsp;!&gt;&nbsp;&sol;&#94;CP|&#94;IP&sol;</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/CP-QUE/ < (/IP-SUB/ < /^NEG\b/) !> /^CP|^IP/"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex19">19</a>) によって、「か」以外の終助詞をともなう疑問文が検索できる。</p>
+
+<dl>
+  <dt>(<a name="ex19">19</a>)</dt><dd><tt>&sol;CP-QUE&sol;&nbsp;&lt;&nbsp;(&sol;P-FINAL&sol;&nbsp;!&lt;&nbsp;か)&nbsp;!&gt;&nbsp;&sol;&#94;CP|&#94;IP&sol;</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/CP-QUE/ < (/P-FINAL/ !< か) !> /^CP|^IP/"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex20">20</a>) によって、終助詞「か」をともなわない疑問文が検索できる。</p>
+
+<dl>
+  <dt>(<a name="ex20">20</a>)</dt><dd><tt>&sol;CP-QUE&sol;&nbsp;!&lt;&nbsp;(&sol;P-FINAL&sol;&nbsp;&lt;&nbsp;か)&nbsp;!&gt;&nbsp;&sol;&#94;CP|&#94;IP&sol;</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/CP-QUE/ !< (/P-FINAL/ < か) !> /^CP|^IP/"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<h2><a name="sec6">6</a>&nbsp;&nbsp;&nbsp;二重主語構文</h2>
+
+<p align="justify">〇パターン (<a href="#ex21">21</a>) によって、大主語が「は」で、小主語が「が」で表示された二重主語構文を検索できる。</p>
+
+<dl>
+  <dt>(<a name="ex21">21</a>)</dt><dd><tt>&sol;PP-SBJ&#92;b&sol;&nbsp;&lt;&nbsp;(&sol;P-OPTR&sol;&nbsp;&lt;&nbsp;は)&nbsp;&#x24;&nbsp;(&sol;PP-SBJ2&sol;&nbsp;&lt;&nbsp;(&sol;P-ROLE&sol;&nbsp;&lt;&nbsp;が))</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/PP-SBJ\b/ < (/P-OPTR/ < は) $ (/PP-SBJ2/ < (/P-ROLE/ < が))"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<h2><a name="sec7">7</a>&nbsp;&nbsp;&nbsp;並列構文</h2>
+
+<p align="justify">〇パターン (<a href="#ex22">22</a>) によって、接続詞「て」を伴う並列副詞節を持つ文を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex22">22</a>)</dt><dd><tt>&sol;IP-ADV-CONJ&sol;&nbsp;&lt;-&nbsp;(&sol;P-CONN&sol;&nbsp;&lt;&nbsp;&sol;&#94;て|で&#x24;&sol;)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/IP-ADV-CONJ/ <- (/P-CONN/ < /^て|で$/)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex23">23</a>) によって、接続詞「て」を伴う並列副詞節が2つ連続する文を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex23">23</a>)</dt><dd><tt>&sol;IP-ADV-CONJ&sol;&nbsp;&lt;-&nbsp;(&sol;P-CONN&sol;&nbsp;&lt;&nbsp;&sol;&#94;て|で&#x24;&sol;)&nbsp;&lt;&nbsp;(&sol;IP-ADV-CONJ&sol;&nbsp;&lt;-&nbsp;(&sol;P-CONN&sol;&nbsp;&lt;&nbsp;&sol;&#94;て|で&#x24;&sol;))</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/IP-ADV-CONJ/ <- (/P-CONN/ < /^て|で$/) < (/IP-ADV-CONJ/ <- (/P-CONN/ < /^て|で$/))"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex24">24</a>) によって、接続助詞「や」を伴う並列句が他に3つ以上の並列する姉妹を持つ例を検索できる (ここで言う「姉妹」には句読点も含まれることに注意)。</p>
+
+<dl>
+  <dt>(<a name="ex24">24</a>)</dt><dd><tt>P-CONN&nbsp;&lt;&nbsp;や&nbsp;&gt;&nbsp;(CONJP&nbsp;&gt;&nbsp;(&lowbar;&lowbar;&nbsp;&lt;4&nbsp;&lowbar;&lowbar;))</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="P-CONN < や > (CONJP > (__ <4 __))"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<h2><a name="sec8">8</a>&nbsp;&nbsp;&nbsp;語順変換</h2>
+
+<p align="justify">〇パターン (<a href="#ex25">25</a>) により、主語、第1目的語ともに省略されておらず、第1目的語が主語よりも先にあらわれる文を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex25">25</a>)</dt><dd><tt>&sol;OB1&sol;&nbsp;!&lt;&nbsp;&sol;&#94;&#92;*&sol;&nbsp;&#x24;..&nbsp;(&sol;SBJ&sol;&nbsp;!&lt;&nbsp;&sol;&#94;&#92;*&sol;)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/OB1/ !< /^\*/ $.. (/SBJ/ !< /^\*/)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex26">26</a>) により、省略されておらず、取り立て助詞「は」を付加された第1目的語が省略されていない主語よりも先にあらわれる文を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex26">26</a>)</dt><dd><tt>&sol;PP-OB1&sol;&nbsp;&lt;&nbsp;(&sol;P-OPTR&sol;&nbsp;&lt;&nbsp;&sol;は&sol;)&nbsp;&#x24;..&nbsp;(&sol;SBJ&sol;&nbsp;!&lt;&nbsp;&sol;&#94;&#92;*&sol;)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/PP-OB1/ < (/P-OPTR/ < /は/) $.. (/SBJ/ !< /^\*/)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<h2><a name="sec9">9</a>&nbsp;&nbsp;&nbsp;省略</h2>
+
+<p align="justify">〇パターン (<a href="#ex27">27</a>) により、第1目的語が省略されている (ゼロ代名詞となっている) 文を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex27">27</a>)</dt><dd><tt>&sol;&#92;*&sol;&nbsp;&gt;&nbsp;(&sol;&#94;NP-OB1&sol;&nbsp;!&lt;&nbsp;&sol;&#92;*T&#92;*&sol;)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/\*/ > (/^NP-OB1/ !< /\*T\*/)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex28">28</a>) により、主語が省略されている 命令文を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex28">28</a>)</dt><dd><tt>&sol;&#92;*hearer&#92;*&sol;&nbsp;&gt;&nbsp;(&sol;NP-SBJ&sol;&nbsp;&gt;&nbsp;(&sol;IP-SUB&sol;&nbsp;&gt;&nbsp;&sol;CP-IMP&sol;))</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/\*hearer\*/ > (/NP-SBJ/ > (/IP-SUB/ > /CP-IMP/))"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex29">29</a>) により、助詞 (「は」「が」等) が省略された明示的な主語を持つ文を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex29">29</a>)</dt><dd><tt>&sol;&#94;NP-SBJ&sol;&nbsp;!&lt;&nbsp;&sol;&#92;*&sol;&nbsp;!&#x24;.&nbsp;&sol;&#94;P&#92;b&sol;</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/^NP-SBJ/ !< /\*/ !$. /^P\b/"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex30">30</a>) により、述語が省略された文を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex30">30</a>)</dt><dd><tt>&sol;&#94;IP&sol;&nbsp;!&lt;&nbsp;&sol;VB|ADJ|NP-PRD&sol;&nbsp;!&lt;&nbsp;(&sol;&#94;AX&#92;b&sol;&nbsp;&lt;&nbsp;&sol;&#94;だ|&#94;で&sol;)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/^IP/ !< /VB|ADJ|NP-PRD/ !< (/^AX\b/ < /^だ|^で/)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<h2><a name="sec10">10</a>&nbsp;&nbsp;&nbsp;名詞節</h2>
+
+<p align="justify">〇パターン (<a href="#ex31">31</a>) により、名詞「こと」が導く名詞節 (「～ということ」を除く) を検索することが出来る。</p>
+
+<dl>
+  <dt>(<a name="ex31">31</a>)</dt><dd><tt>こと&nbsp;&gt;&nbsp;(&sol;&#94;N&#92;b&sol;&nbsp;&#x24;,&nbsp;&sol;&#94;IP-EMB&#92;b&sol;)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="こと > (/^N\b/ $, /^IP-EMB\b/)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">*少数だが FN とされている「こと」があり、検討が必要。</p>
+
+<p align="justify">〇パターン (<a href="#ex32">32</a>) により、「～ということ」により導かれる名詞節を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex32">32</a>)</dt><dd><tt>こと&nbsp;&gt;&nbsp;(&sol;&#94;N&#92;b&sol;&nbsp;&#x24;,&nbsp;(&sol;&#94;CP-THT&#92;b&sol;&nbsp;&lt;&nbsp;(&sol;&#94;P-COMP&#92;b&sol;&nbsp;&lt;&nbsp;という)))</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="こと > (/^N\b/ $, (/^CP-THT\b/ < (/^P-COMP\b/ < という)))"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex33">33</a>) により、名詞「の」が導く主語名詞節を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex33">33</a>)</dt><dd><tt>の&nbsp;&gt;&nbsp;(&sol;&#94;N&#92;b&sol;&nbsp;&#x24;,&nbsp;&sol;&#94;IP-EMB&#92;b&sol;&nbsp;&gt;&nbsp;(&sol;NP&sol;&nbsp;&gt;&nbsp;&sol;PP-SBJ&sol;))</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="の > (/^N\b/ $, /^IP-EMB\b/ > (/NP/ > /PP-SBJ/))"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">*修飾先の名詞や名詞化接辞がないのにもかかわらず名詞節が構成される場合の扱いについては、マニュアル「10.2 名詞化節」の IP-NMZ および主名詞を持たない関係節 (IP-REL) を参照のこと。</p>
+
+<p align="justify">〇パターン (<a href="#ex34">34</a>) により、擬似分裂構文「～のは (が)～だ」を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex34">34</a>)</dt><dd><tt>&sol;PP-SBJ&sol;&nbsp;&lt;&nbsp;(&sol;&#94;NP&sol;&nbsp;&lt;&nbsp;(&sol;&#94;N&sol;&nbsp;&lt;&nbsp;の))&nbsp;&#x24;..&nbsp;&sol;&#94;NP-PRD&sol;</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/PP-SBJ/ < (/^NP/ < (/^N/ < の)) $.. /^NP-PRD/"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex35">35</a>) によって、終助詞「か」が導く疑問節が第1目的語となっている例を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex35">35</a>)</dt><dd><tt>&sol;CP-QUE-OB1&sol;&nbsp;&lt;&nbsp;(&sol;P-FINAL&sol;&nbsp;&lt;&nbsp;か)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/CP-QUE-OB1/ < (/P-FINAL/ < か)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex36">36</a>) によって、疑問詞を含む疑問節が主語となっている例を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex36">36</a>)</dt><dd><tt>&sol;CP-QUE-SBJ&sol;&nbsp;&lt;&lt;&nbsp;&sol;&#94;W&sol;</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/CP-QUE-SBJ/ << /^W/"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex37">37</a>) によって、補文助詞「と」が導く補部節が伝達動詞や認識動詞等の第1目的語となっている文を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex37">37</a>)</dt><dd><tt>&sol;CP-THT-OB1&sol;&nbsp;&lt;&nbsp;(&sol;&#94;P-COMP&sol;&nbsp;&lt;&nbsp;と)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/CP-THT-OB1/ < (/^P-COMP/ < と)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<h2><a name="sec11">11</a>&nbsp;&nbsp;&nbsp;副詞節</h2>
+
+<p align="justify">〇パターン (<a href="#ex38">38</a>) によって、接続助詞「ば」が導く条件節を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex38">38</a>)</dt><dd><tt>&sol;IP-ADV-SCON-CND&sol;&nbsp;&lt;&nbsp;(&sol;P-CONN&sol;&nbsp;&lt;&nbsp;ば)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/IP-ADV-SCON-CND/ < (/P-CONN/ < ば)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex39">39</a>) によって、接続助詞「から」が導く従属節を伴う文を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex39">39</a>)</dt><dd><tt>&sol;PP-SCON&sol;&nbsp;&lt;&nbsp;(&sol;P-CONN&sol;&nbsp;&lt;&nbsp;から)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/PP-SCON/ < (/P-CONN/ < から)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<h2><a name="sec12">12</a>&nbsp;&nbsp;&nbsp;関係節</h2>
+
+<p align="justify">〇パターン (<a href="#ex40">40</a>) によって、第1目的語が関係節化されている例 (主名詞が関係節の中で第1目的語の文法役割を果たしているもの) を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex40">40</a>)</dt><dd><tt>&sol;&#94;N&#92;b&sol;&nbsp;&#x24;,,&nbsp;(&sol;IP-REL&sol;&nbsp;&lt;&nbsp;(&sol;NP-OB1&sol;&nbsp;&lt;&nbsp;&sol;&#92;*T&#92;*&sol;))</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/^N\b/ $,, (/IP-REL/ < (/NP-OB1/ < /\*T\*/))"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex41">41</a>) によって、関係節の後に主名詞が直接後続するのでなく、両者の間に1つ以上の単語が介在する例を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex41">41</a>)</dt><dd><tt>&sol;&#94;N&#92;b&sol;&nbsp;&#x24;,,&nbsp;(&lowbar;&lowbar;&nbsp;&#x24;,&nbsp;&sol;IP-REL&sol;)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/^N\b/ $,, (__ $, /IP-REL/)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex42">42</a>) によって、主名詞が関係節の中で必須文法役割 (主語、第1目的語、および第2目的語) 以外の文法役割を果たしている例を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex42">42</a>)</dt><dd><tt>&sol;&#94;IP-REL&sol;&nbsp;!&lt;&nbsp;(&sol;NP-(SBJ|SBJ2|LGS|DSBJ|OB1|DOB1|OB2|CZZ)&#92;b&sol;&nbsp;&lt;&nbsp;&sol;&#92;*T&#92;*&sol;)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/^IP-REL/ !< (/NP-(SBJ|SBJ2|LGS|DSBJ|OB1|DOB1|OB2|CZZ)\b/ < /\*T\*/)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">〇パターン (<a href="#ex43">43</a>) によって、長距離依存となっている関係節化、すなわち関係節内部に埋め込まれた節の中にトレースが存在する例を検索することができる。埋め込まれるのが形容詞節である場合を除外する。</p>
+
+<dl>
+  <dt>(<a name="ex43">43</a>)</dt><dd><tt>&sol;&#94;IP-REL&#92;b&sol;&nbsp;&lt;&lt;&nbsp;(&sol;&#94;IP&sol;&nbsp;&lt;&nbsp;(&sol;&#94;NP&sol;&nbsp;&lt;&nbsp;&sol;&#92;*T&#92;*&sol;)&nbsp;!&lt;&nbsp;&sol;ADJ&sol;)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/^IP-REL\b/ << (/^IP/ < (/^NP/ < /\*T\*/) !< /ADJ/)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">*当該の IP-REL とペアをなす主名詞とこのトレースとが同一指示であるという保証は無い。すなわち、埋め込まれるのが関係節で、それが修飾する主名詞と同一指示である可能性がある。</p>
+
+<p align="justify">〇パターン (<a href="#ex44">44</a>) によって、外の関係の関係節を伴い、形式名詞でなく名詞として使用されている「わけ」の例を検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex44">44</a>)</dt><dd><tt>わけ&nbsp;&gt;&nbsp;(&sol;&#94;N&#92;b&sol;&nbsp;&#x24;,,&nbsp;&sol;&#94;IP-EMB&#92;b&sol;)</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="わけ > (/^N\b/ $,, /^IP-EMB\b/)"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<br>
+<br>
+<br>
+</body>
+</html>

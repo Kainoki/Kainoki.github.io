@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>The Kainoki Treebank</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="headline1">
+<h1>The Kainoki Treebank &ndash; a parsed corpus of contemporary Japanese</h1>
+</div>
+
+<ul class="navbar">
+<li><a href="index.html">Front page</a><br><a href="front_page_Japanese.html">フロント・ページ</a>
+<li class="active">An invitation to the user<br><a href="invitation_Japanese.html">統語解析情報付きコーパスのすすめ</a>
+<li><a href="howtofind.html">Example search patterns</a><br><a href="howtofind_Japanese.html">###Example search patterns###</a>
+<li><a href="http://160.16.203.55/dev/cgi-bin/overview.sh?db=Kainoki" target="_blank">Search interface<br>検索インターフェース</a>
+<li><a href="Kainoki_guide.html">Parsing Guide</a><br><a href="Kainoki_guide_j.html">パーシングガイド</a>
+<li><a href="acknowledgements.html">Acknowledgements of support</a><br><a href="acknowledgements_Japanese.html">研究支援について</a>
+<li><a href="whoisEdKainoki.html">Who is Ed Kainoki?</a><br><a href="whoisEdKainoki_Japanese.html">エド・カイノキとは誰ですか？</a>
+<li><a href="contact.html">Contact</a><br><a href="contact_Japanese.html">連絡先</a>
+<li><a href="https://github.com/kainoki/data/releases/tag/release" target="_blank">Download<br>ダウンロード</a>
+<li><a href="http://160.16.203.55/dev/">Ecosystem</a>
+</ul>
+
+<h2><a name="sec1">1</a>&nbsp;&nbsp;&nbsp;An invitation to the user</h2>
+
+<p align="justify">What can you do with a parsed corpus that you couldn't do without? Let's say you wanted to see all the things that horses are depicted as doing in Japanese texts. You want to find all the predicates in relation to which 馬&nbsp;is a subject (or part of a noun phrase subject formed on 馬). Now, along with expressions that are fairly reliably subjects such as 馬が, there are other expressions that may or may not be subjects: 馬は, 馬も, 馬さえ, 馬なら, 馬に, 馬から, 馬の, etc. Furthermore you know that there are sentences such as (<a href="#ex1">1</a>) where 馬&nbsp;is the subject of three verbs, but only appears local to one of them.</p>
+
+<dl>
+  <dt>(<a name="ex1">1</a>)</dt><dd>馬が追い手を振りきって、走って、山へ逃げた</dd>
+</dl>
+
+<p align="justify">You know there might be pronouns that refer to previously mentioned horses, and you would like to look at the predicates that are associated with these pronouns. On top of this, there are expressions like (<a href="#ex2">2</a>) which depict horses as things that whinny and (<a href="#ex3">3</a>) where horses have white tails, but the status of 馬&nbsp;as subject is not directly inferable by reference to particle marking or word order alone.</p>
+
+<dl>
+  <dt>(<a name="ex2">2</a>)</dt><dd>鳴く馬</dd>
+</dl>
+
+<dl>
+  <dt>(<a name="ex3">3</a>)</dt><dd>しっぽが白い馬</dd>
+</dl>
+
+<p align="justify">With a parsed corpus, you can find all the predicates in relation to which 馬 is a subject&nbsp;(or part of a subject noun phrase formed on 馬, or a subject pronoun co-referent with an antecedent occurrence of 馬). This is achieved by referring to specifications of grammatical role (i.e., subject), syntactic structure (e.g., does the subject relation hold from a single structural layer, or because there is inheritance through layers of subordination and coordination), and annotation for semantic relations (e.g., anaphoric dependencies established across multiple sentences).</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;Another example: Let's say you are interested in expressions like (<a href="#ex4">4</a>) in sentences such as (<a href="#ex5">5</a>).</p>
+
+<dl>
+  <dt>(<a name="ex4">4</a>)</dt><dd>笠を手に</dd>
+</dl>
+
+<dl>
+  <dt>(<a name="ex5">5</a>)</dt><dd>笠を手に出かけた</dd>
+</dl>
+
+<p align="justify">Expression (<a href="#ex4">4</a>) is interesting because in the sentence there seems to be a missing verb (like 持って) that mediates the relation between 笠を&nbsp;and 手に. Expression  (<a href="#ex4">4</a>) is especially interesting because (unlike  expressions such as 「料理を中心に」or 「首都を皮切りに」) the relation between 笠を&nbsp;and 手に&nbsp;cannot be paraphrased as 「A を&nbsp;B として」. With a parsed corpus, you can search for all the subordinate clauses (<tt>&sol;^IP-ADV&sol;</tt>) that</p>
+<ul>
+<dt>i.</dt><dd>contain an accusative object (<tt>&lt; &sol;^PP-OB1&sol;</tt>)</dd>
+<dt>ii.</dt><dd>a postpositional phrase headed by に (<tt>&lt; (&sol;^PP&sol; &lt; (&sol;^P-ROLE&sol; &lt; に))</tt>)</dd>
+<dt>iii.</dt><dd>nothing else (<tt>!&lt;3 __</tt>)</dd>
+</ul>
+
+<p align="justify">This is achieved by the search pattern of (<a href="#ex6">6</a>).</p>
+
+<dl>
+  <dt>(<a name="ex6">6</a>)</dt><dd><tt>&sol;&#94;IP-ADV&sol;&nbsp;&lt;&nbsp;&sol;&#94;PP-OB1&sol;&nbsp;&lt;&nbsp;(&sol;&#94;PP&sol;&nbsp;&lt;&nbsp;(&sol;&#94;P-ROLE&sol;&nbsp;&lt;&nbsp;に))&nbsp;!&lt;3&nbsp;&lowbar;&lowbar;</tt><br></dd>
+</dl>
+
+<form target="_blank" action="http://160.16.203.55/dev/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/^IP-ADV/ < /^PP-OB1/ < (/^PP/ < (/^P-ROLE/ < に)) !<3 __"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p align="justify">Click the &lsquo;Try&rsquo; button to see results from the corpus.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;These are just a few examples of what you can do with a parsed corpus, but couldn't do with a search engine in a browser or a concordancer. This is made possible by human analysis of the meaning of sentences, and organisation of the data based on a limited number of abstract principles. There are many questions about Japanese grammar that haven't been explored systematically, but are amenable to investigation through a parsed corpus. This is because a parsed corpus analyzes everything, rather than just the things that linguists have already identified as interesting. We invite you to explore and see what you may find.</p>
+
+<br>
+<h2><a name="sec2">2</a>&nbsp;&nbsp;&nbsp;String searches</h2>
+
+<p align="justify">In order to use the corpus effectively, you need to know in general terms what is inside and how it is organized. One simple way to access information without needing any background information beyond a general knowledge of Japanese is the &ldquo;Basic string search&rdquo; interface in the corpus, and its related functions. This is a very powerful tool which has features that simplify searches and make extensive use of wild cards unnecessary (unlike some other search engines). For example, you can easily search for a string that does not actually form a word in Contemporary Japanese, but nonetheless appears in texts as combinations of parts of words. Anyone who knows Japanese can say that the contiguous string 「にはい」does not spell a simplex word. A search that looks for a segment of that precise shape (that is, &lt;wb&gt;にはい&lt;wb&gt;, where &ldquo;&lt;wb&gt;&rdquo; indicates a word boundary) will yield nothing. (This search can be done by applying the &lsquo;Strict&rsquo; option for string searches to the search expression にはい.)</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;But the string にはい&nbsp;does appear in combinations of parts of words (as long as those parts are written in ひらがな). For example, the  &lsquo;Character&rsquo; string search option looks for  &lt;wb&gt;に||は||い&lt;wb&gt; (where &ldquo;||&rdquo; indicates that a word boundary is possible in that position.) This yields</p>
+<ul>
+<li>「家&lt;wb&gt;に&lt;wb&gt;は&lt;wb&gt;い&lt;wb&gt;ない」 (家には居ない).</li>
+</ul>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;The  &lsquo;Liberal&rsquo; string search option allows word boundaries to be ignored when searching for a string, so it looks for ||に||は||い||. Added to the results from the &lsquo;Character&rsquo; search, this option yields examples like these:</p>
+<ul>
+<li>「簡単&lt;wb&gt;に&lt;wb&gt;は&lt;wb&gt;いか&lt;wb&gt;ない」(簡単には行かない)</li>
+<li>「エジプト&lt;wb&gt;に&lt;wb&gt;はいろ&lt;wb&gt;う&lt;wb&gt;と&lt;wb&gt;して」(エジプトに入ろうとして)</li>
+<li>「&lt;wb&gt;わけにはいかない&lt;wb&gt;」</li>
+<li>「屋根&lt;wb&gt;に&lt;wb&gt;はい上がる」(屋根に這い上がる), etc.</li>
+</ul>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;Results can be specified to a certain extent by using the  &lsquo;Mine&rsquo; string search option. This allows you to introduce word boundaries into the string by typing a single space (symbolized here with an underscore &ldquo;_&rdquo;). For example, entering に_はい&nbsp;under this option looks for ||に&lt;wb&gt;はい||, yielding examples with verbs 入る&nbsp;and 這い, but none with verb 居る&nbsp;or 行く.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;Results can be specified still further by choosing the &lsquo;Strict&rsquo; option for string searches, which enforces word boundaries at the edges of the string. For example, entering に_はい&nbsp;under this option looks for &lt;wb&gt;に&lt;wb&gt;はい&lt;wb&gt;. This yields no results at present because there are no isolated words 肺, 灰, 杯, or 這い&nbsp;in the corpus (at least none written in ひらがな) that immediately follow に. Such a result also tells us that 這いあがる&nbsp;is one segment (that is, the whole sequence is analyzed as a single lexical item, rather than as two words). This is useful information: While productive auxiliary verbs following i- and e- combining stems (始める, 終わる, 出す, 止む, 忘れる, etc.)&nbsp;are treated as separate words, there are also sequences of verbs in  i- and e- combining stem form in lexical compounds with other verbs: 這い上がる, かき集める, 言いふらす, 撒き散らす, 追いかける, etc. For these latter forms, there is no word boundary between verb 1 and verb 2.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;Results can be expanded using the Greedy string search function in combination with the &lsquo;Liberal&rsquo;, &lsquo;Character&rsquo;, &lsquo;Mine&rsquo; and &lsquo;Strict&rsquo; options. Greedy string search enables you to specify the upper limit of intervening characters that may appear at a word boundary site. For the string search に_はい, using Greedy string search in combination with the &lsquo;Character&rsquo; string search option and setting the intervening character number to a value of 1 will yield examples containing things such as</p>
+<ul>
+<li>「間には悪い感情」,</li>
+<li>「基本的に鬼は怖いもの」,</li>
+<li>「調べるのには向いていない」,</li>
+<li>「活動には狙いが二つ」,</li>
+<li>「チリにはない考え方」,</li>
+<li>「おいしいにはおいしいけれど」, etc.</li>
+</ul>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;Setting the intervening character number to a higher value yields even more results.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;Greedy string search interacts with the string search options in the following ways:</p>
+<ul>
+<li>With the &lsquo;Liberal&rsquo; option for a string A_BC, Greedy string search set at <tt>n</tt> allows <tt>n</tt> characters to intervene between A and BC (with no word boundary restrictions for A and for BC).</li>
+<li>With the &lsquo;Character&rsquo; option for a string A_BC, Greedy string search set at <tt>n</tt> allows <tt>n</tt> characters to intervene between A and BC (with word boundary restrictions after A and before BC).</li>
+<li>With the &lsquo;Mine&rsquo; option for a string A_BC, Greedy string search set at <tt>n</tt> allows <tt>n</tt> characters to intervene between A and BC, (with no word boundary restrictions before A and after BC).</li>
+<li>With the &lsquo;Strict&rsquo; option for a string A_BC, Greedy string search set at <tt>n</tt> allows <tt>n</tt> characters to intervene between A and BC, (with word boundary restrictions for A and for BC).</li>
+</ul>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;The principles by which Basic string search and Greedy string search operate for Kanji&sol;Kana text do not change when the corpus is accessed in the Roman alphabet.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;There are limitations to the string search: (i) the results are limited to a particular orthographic form (e.g.,  うま, ウマ, and 馬&nbsp;all give different results); and (ii) searches based on lemmas are not possible (e.g., while expressions あります, あれば, ある, and あった&nbsp;all contain a morpheme with the same lemma, 有る, but to get results for all attestations of the the word in question, the various forms must each be searched for separately: あり, アリ, 在り, 有り, あれ, アレ, 在れ, 有れ, etc.). </p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;Accordingly string searches will yield complete results for sentences containing a specific string, but string search is most useful in cases when either i) the user doesn't know how a string is segmented, or ii) the user doesn't know what structural assignments are given to elements in a sequences of words. For example, if you don't happen to know that in the corpus the string ならでは&nbsp;is marked up as a single word, searching for any of なら, らで, では, ならで, らでは, or ならではの&nbsp;using the &lsquo;Liberal&rsquo; option will yield ならでは&nbsp;in the results. If you don't know that the string に向けて&nbsp;is marked up in two different ways, depending on the grammatical functions involved, using the &lsquo;Liberal&rsquo; option with that string will yield the pattern <tt>(P-ROLE に向けて)</tt> and also the pattern <tt>(P-ROLE に) (VB 向け) (P-CONN て)</tt>. (The significance of the patterns is discussed in section <a href="#sec3">3</a> below.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;In sum, any well-formed string search that has a corresponding pattern in the corpus will yield search results. The default displays show you for each attestated example how the elements defined in the string search are distributed in the structure of that example. Examining the displays is one way to familiarize yourself with the segmentation practices with regard to morphemes in the corpus and with specifics of the structure of the corpus.</p>
+
+<br>
+<h2><a name="sec3">3</a>&nbsp;&nbsp;&nbsp;Basic structure</h2>
+
+<p align="justify">This corpus is primarily a description of texts. The texts are divided into basic units (primarily sentences and sentence fragments). A basic unit is organized on the principle of a tree in which a trunk branches into smaller parts, ending with leaves (the words of the text). Alternatively you can think of a big box with smaller boxes inside, and the smallest boxes contain blocks (the words of the text). Both ways of visualizing are useful. As a mathematical model, both visualizations amount to the same thing, but the simplest way to express a tree structure in electronic text is to use labeled brackets (the boxes within boxes idea), while in writing about tree structures we use the tree metaphor most often, together with some kinship terms (as might be used in a genealogical tree): <tt>ancestor::descendant</tt>; <tt>sibling::sibling</tt>; <tt>parent::child</tt>, etc. The only confusing thing about the tree metaphor is that linguistic trees are written upside down, with the leaves (words) at the bottom.</p>
+
+<h3><a name="sec3.1">3.1</a>&nbsp;&nbsp;&nbsp;From leaf to root</h3>
+
+<p align="justify">First let's consider how trees can get built from the bottom up. This discussion is meant to give the user an idea of how a sentence might be analyzed. As an example, (<a href="#ex7">7</a>) is a sentence from the corpus.</p>
+
+<dl>
+  <dt>(<a name="ex7">7</a>)</dt><dd>鈴木さんの言葉はすがすがしくさえあった</dd>
+</dl>
+
+<p align="justify">As a piece of data this sentence forms a string of characters. It is possible to search for the whole sentence using the String search interface on-line. As this sentence is unique in the corpus, a properly formed search will yield only one entry in the result. A poorly formed search will yield nothing. Again, at the moment, the sentence above is only a string of characters, while sentences in the corpus have been parsed into segments and organized under a lattice of nodes. In order for String search to find a reflex in the corpus, it has to match strings to segments in some way or other. One way is to conduct a String search with either &ldquo;Liberal&rdquo; or &ldquo;Character&rdquo; selected. Either of these will regard each point between characters as a potential segment (word) boundary.</p>
+
+<dl>
+  <dt>(<a name="ex8">8</a>)</dt><dd>鈴||木||さ||ん||の||言||葉||は||す||が||す||が||し||く||さ||え||あ||っ||た</dd>
+</dl>
+
+<p align="justify">This will return a result of one entry, containing one attestation of each of the segments in the sentence. Another way is to segment the string exactly as it is segmented in the corpus, and then conduct a String search with &ldquo;Mine&rdquo; or &ldquo;Strict&rdquo; selected as a condition:</p>
+
+<dl>
+  <dt>(<a name="ex9">9</a>)</dt><dd>鈴木さん&lt;wb&gt;の&lt;wb&gt;言葉&lt;wb&gt;は&lt;wb&gt;すがすがしく&lt;wb&gt;さえ&lt;wb&gt;あっ&lt;wb&gt;た</dd>
+</dl>
+
+<p align="justify">This also will return a result of one entry.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;While the data in the corpus is segmented in a specific way, the segmentation should be fairly easy for a user to predict, as it is mostly based on  school grammar: The main parts of speech in school grammar (noun, verb, adjective, adverb, pre-noun, particle, auxiliary, etc.) are set apart as separate segments (words) and each is dominated by a pre-terminal node that is labeled with the name of the part-of-speech for that word.</p>
+
+<dl>
+  <dt>(<a name="ex10">10</a>)</dt><dd></dd>
+</dl>
+
+<table border="0" cellpadding="2px">
+  <tr>
+    <td>NPR</td><td>P-ROLE</td><td>N</td><td>P-OPTR</td><td>ADJI</td><td>P-OPTR</td><td>VB2</td><td>AXD</td>
+  </tr>
+  <tr>
+    <td>鈴木さん</td><td> の</td><td>言葉</td><td>は</td><td>すがすがしく</td><td>さえ</td><td>あっ</td><td>た</td>
+  </tr>
+</table>
+
+<p align="justify"><tt>NPR</tt> (&ldquo;noun-proper&rdquo;) is a subcategory of nouns. The pre-terminal node contains the segment, and this can be expressed in labelled bracket notation in the following way:</p>
+
+<dl>
+  <dt>(<a name="ex11">11</a>)</dt><dd></dd>
+</dl>
+<tt>(NPR&nbsp;鈴木さん)</tt><br>
+
+<p align="justify"><tt>P-ROLE</tt> is a sub-category of particles that express grammatical roles:</p>
+
+<dl>
+  <dt>(<a name="ex12">12</a>)</dt><dd></dd>
+</dl>
+<tt>(P-ROLE&nbsp;の)</tt><br>
+
+<p align="justify"><tt>N</tt> is the label for common nouns:</p>
+
+<dl>
+  <dt>(<a name="ex13">13</a>)</dt><dd></dd>
+</dl>
+<tt>(N&nbsp;言葉)</tt><br>
+
+<p align="justify"><tt>P-OPTR</tt> is a subcategory of particles, including what are known as <e>toritate</e> particles:</p>
+
+<dl>
+  <dt>(<a name="ex14">14</a>)</dt><dd></dd>
+</dl>
+<tt>(P-OPTR&nbsp;は)</tt><br>
+
+<p align="justify"><tt>ADJI</tt> is the category of い-adjectives, excluding auxiliary usages such as -たい, -がたい, -やすい, -にくい, and -づらい. While the <tt>ADJI</tt>  すがすがしく&nbsp;in the example above is in the Infinitive inflection, this information is not included in the pre-terminal node label:</p>
+
+<dl>
+  <dt>(<a name="ex15">15</a>)</dt><dd></dd>
+</dl>
+<tt>(ADJI&nbsp;すがすがしく)</tt><br>
+
+<p align="justify"><tt>P-OPTR</tt> appears after inflected forms as well:</p>
+
+<dl>
+  <dt>(<a name="ex16">16</a>)</dt><dd></dd>
+</dl>
+<tt>(P-OPTR&nbsp;さえ)</tt><br>
+
+<p align="justify"><tt>VB2</tt> is a sub-category of verb that follows a core predicate and carries out one or more  grammatical functions. <tt>VB2</tt>s are usually derived from full-fledged verbs, but lose much of their lexical meaning when they appear as <tt>VB2</tt>s. Here a form of the verb ある&nbsp;appears as a &lsquo;dummy&rsquo; to carry inflectional information for the preceding core predicate. Note that the actual form of the verb is a combining stem:</p>
+
+<dl>
+  <dt>(<a name="ex17">17</a>)</dt><dd></dd>
+</dl>
+<tt>(VB2&nbsp;あっ)</tt><br>
+
+<p align="justify"><tt>AXD</tt> is the category of auxiliaries for past-tense morphology:</p>
+
+<dl>
+  <dt>(<a name="ex18">18</a>)</dt><dd></dd>
+</dl>
+<tt>(AXD&nbsp;た)</tt><br>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;With the parts of speech established for each word, it is possible to refer to the immediate context in which words appear and infer what kind of structures they occupy. We can try this for the sentence above, segment by segment, working from left to right. The basic principle for building structure is that heads project phrases (constituents) and combine with other constituents under those phrases. Accordingly, <tt>NPR</tt> (as a sub-category of noun) will project an <tt>NP</tt> (noun phrase):</p>
+
+<dl>
+  <dt>(<a name="ex19">19</a>)</dt><dd></dd>
+</dl>
+<tt>(NP&nbsp;(NPR&nbsp;鈴木さん))</tt><br>
+
+<p align="justify">This <tt>NP</tt> is immediately followed by a genitive particle <tt>P-ROLE</tt>, which is a head projecting a <tt>PP</tt>. To put it another way, this <tt>NP</tt> modifies the following <tt>P-ROLE</tt> as its complement:</p>
+
+<dl>
+  <dt>(<a name="ex20">20</a>)</dt><dd></dd>
+</dl>
+<tt>(PP&nbsp;(NP&nbsp;(NPR&nbsp;鈴木さん))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;(P-ROLE&nbsp;の))</tt><br>
+
+<p align="justify">A genitive particle immediately preceding a noun typically marks the complement of that noun. Accordingly the <tt>PP</tt> is inside of the <tt>NP</tt> projected by the <tt>N</tt> which it precedes:</p>
+
+<dl>
+  <dt>(<a name="ex21">21</a>)</dt><dd></dd>
+</dl>
+<tt>(NP&nbsp;(PP&nbsp;(NP&nbsp;(NPR&nbsp;鈴木さん))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(P-ROLE&nbsp;の))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;(N&nbsp;言葉))</tt><br>
+
+<p align="justify">Again, a following particle <tt>P</tt> takes the <tt>NP</tt> as complement, projecting a <tt>PP</tt> containing that <tt>NP</tt>:</p>
+
+<dl>
+  <dt>(<a name="ex22">22</a>)</dt><dd></dd>
+</dl>
+<tt>(PP&nbsp;(NP&nbsp;(PP&nbsp;(NP&nbsp;(NPR&nbsp;鈴木さん))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(P-ROLE&nbsp;の))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(N&nbsp;言葉))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;(P-OPTR&nbsp;は))</tt><br>
+
+<p align="justify">Noun phrases marked with focus particles typically relate to predicates (according to some grammatical role or other). The segment すがすがしく&nbsp;immediately following は&nbsp;has the part-of-speech of い-adjective (<tt>ADJI</tt>). This is one of the three basic types of expressions that form core parts of predicates: verbs, adjectives, and copular expressions. In general, &ldquo;predicate&rdquo; is an inflecting category that can project clauses. Predicates in Japanese can be formed by a single segment, but they are frequently formed of a string of segments of different types. For now let's assume that すがすがしく&nbsp;projects a clause that contains the immediately preceding <tt>PP</tt>. Clauses are labelled <tt>IP</tt> (inflectional phrase).</p>
+
+<dl>
+  <dt>(<a name="ex23">23</a>)</dt><dd></dd>
+</dl>
+<tt>(IP&nbsp;(PP&nbsp;(NP&nbsp;(PP&nbsp;(NP&nbsp;(NPR&nbsp;鈴木さん))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(P-ROLE&nbsp;の))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(N&nbsp;言葉))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(P-OPTR&nbsp;は))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;(ADJI&nbsp;すがすがしく))</tt><br>
+
+<p align="justify">The remaining elements さえ、,  あっ, and た&nbsp;can be seen as parts of a predicate that has an <tt>ADJI</tt> as its core. Specifically, a past tense adjectival predicate すがすがしかった&nbsp;has been broken up so that the core part of it can receive focus from the <tt>P-OPTR</tt> さえ. The other parts of the sequence (the verbal syntagm) appear at the same level as the core part.</p>
+
+<dl>
+  <dt>(<a name="ex24">24</a>)</dt><dd></dd>
+</dl>
+<tt>(IP&nbsp;(PP&nbsp;(NP&nbsp;(PP&nbsp;(NP&nbsp;(NPR&nbsp;鈴木さん))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(P-ROLE&nbsp;の))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(N&nbsp;言葉))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(P-OPTR&nbsp;は))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;(ADJI&nbsp;すがすがしく)</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;(P-OPTR&nbsp;さえ)</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;(VB2&nbsp;あっ)</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;(AXD&nbsp;た))</tt><br>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;The resulting structure is a basic constituency tree for a sentence, but when necessary the corpus adds more information about grammatical function in the form of extensions to the node labels. For example, the <tt>PP</tt> 鈴木さんの言葉は&nbsp;is the subject of the <tt>ADJI</tt> すがすがしく, but the particle は&nbsp;doesn't specify that grammatical function, so more information needs to be added: The subject constituent is labelled <tt>PP-SBJ</tt>. Constituents take on grammatical functions when they combine with other elements, so the specification of function is made at the phrase level where combination of constituents takes place. The subject constituent combines with the predicate under the phrase that the predicate projects, so that is the level under which the labelling for function is added. By contrast, particle の&nbsp;inside of an <tt>NP</tt> has a function with a limited set of interpretations (<tt>possessor::possessed</tt> (言葉の音節); <tt>whole::part</tt> (言葉の殆ど); <tt>argument::predicate</tt> (言葉の解釈), etc.), and as such doesn't need an extension in that context. Finally, <tt>IP</tt>s always get an extension. The sentence above is a simple declarative utterance ending in a predicate. We label such sentences <tt>IP-MAT</tt> (inflectional phrase-matrix).</p>
+
+<dl>
+  <dt>(<a name="ex25">25</a>)</dt><dd></dd>
+</dl>
+<tt>(IP-MAT&nbsp;(PP-SBJ&nbsp;(NP&nbsp;(PP&nbsp;(NP&nbsp;(NPR&nbsp;鈴木さん))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(P-ROLE&nbsp;の))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(N&nbsp;言葉))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(P-OPTR&nbsp;は))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ADJI&nbsp;すがすがしく)</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(P-OPTR&nbsp;さえ)</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(VB2&nbsp;あっ)</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(AXD&nbsp;た))</tt><br>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;The above has been an example of the generation of structure for a relatively simple sentence, but the same basic principles of modification and argumenthood can be applied recursively to build very complex structures.</p>
+
+<h3><a name="sec3.2">3.2</a>&nbsp;&nbsp;&nbsp;From root to leaf</h3>
+
+<p align="justify">Now let's consider a sentence from the top down, starting with the root. Each sentence (or sentence fragment) has a root node, which is in turn divided into smaller nodes (normally other complex phrases). Sentence fragments (typically truncated utterances that lack a predicate) have a root node labeled <tt>FRAG</tt>. Full sentences are labeled depending on the type of utterance they represent. A question is labeled <tt>CP-QUE</tt>, an exclamation is labeled <tt>CP-EXL</tt>, and a statement followed by a non-question sentence-final particle or an afterthought is labeled <tt>CP-FINAL</tt>. Each of these nodes typically contain an <tt>IP-SUB</tt> node plus some following element (a sentence-final particle or an afterthought). The remaining root node labels (for sentences that don't involve additional elements marking utterance types) are for statements (<tt>IP-MAT</tt>) and imperatives (<tt>IP-IMP</tt>).</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;All full utterances have an <tt>IP</tt> (inflectional phrase) clause node of some type as a main clause, but there can be other clauses embedded inside these. Subordinate clauses have the label <tt>IP-ADV-SCON</tt>. Such clauses typically modify predications specifying either manner or condition. Non-final coordinate clauses have the label <tt>IP-ADV-CONJ</tt>. Within a noun phrase, clauses directly modifying nouns are labeled either <tt>IP-REL</tt> or <tt>IP-EMB</tt>. With certain exceptions, an <tt>IP</tt> node directly contains a predicate of some sort as a head. Predicates are roughly defined as inflecting expressions that say something about a subject. A common predicate type is that of verbs (labeled <tt>VB</tt>). Directly under (that is &ldquo;directly dominated by&rdquo;) <tt>IP</tt> you will often find a node indicating a part-of-speech of the core predicate (e.g., <tt>VB</tt>) and under the part-of-speech label is the word itself (that is, a segment of text). The word is a leaf node. Incidentally, the other core predicates that head <tt>IP</tt>s are <tt>ADJI</tt> (い-adjective), <tt>ADJN</tt> (な-adjective), and [<tt>NP-PRD</tt> + <tt>AX</tt>] (nominal predicate plus copula).</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;There is an inventory of phrase types that appear as components under IP. Of course, <tt>IP-ADV</tt> can appear recursively under <tt>IP</tt>, as suggested above. The other principle phrase types are <tt>NP</tt> (bare noun phrase); <tt>PP</tt> (particle phrase); <tt>ADVP</tt> (adverbial phrase); <tt>INTJP</tt> (interjectional phrase); <tt>FRAG</tt> (fragment); <tt>PU</tt> (punctuation). Excepting <tt>PU</tt>, any of these phrases may be complex, containing other phrases in addition to a head.</p>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;When using brackets to describe a given structure, we may say that &ldquo;node <tt>A</tt> directly contains node <tt>B</tt>&rdquo; or that &ldquo;node <tt>B</tt> is directly contained by node <tt>A</tt>&rdquo; but we can describe the same relation as &ldquo;node <tt>A</tt> directly dominates node <tt>B</tt>&rdquo;, or &ldquo;node <tt>B</tt> is directly dominated by node <tt>A</tt>&rdquo;. In a tree, such a relationship is represented by a branch extending from a (higher) node <tt>A</tt> close to the root to a (lower) node <tt>B</tt> farther from the root. Trees are connected structures. That is, every element in a tree is related to every other element through branches. Branches express two independent relations: Precedence and direct dominance. These two relations can be combined to define other generalized relations in a tree (e.g., indirect dominance, immediately following sibling, dominated by root, etc.). So you can specify relations between nodes to create search expressions. If, for example, you wanted to find all the questions that are headed by a verb in the form of the combining stem 食べ, you could look for a <tt>CP-QUE</tt> that directly dominates an <tt>IP-SUB</tt> that directly dominates a <tt>VB</tt> that directly dominates the node 食べ.</p>
+
+<br>
+<br>
+<br>
+</body>
+</html>
