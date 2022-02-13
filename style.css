@@ -1,5 +1,5 @@
 #headline1 {
-  background:linear-gradient(#D34E36, #FFB3A7 50%, #FFB3A7 50%, #E35C38);
+  background: Thistle;
   border-radius: 3px;
   color: black;
   padding-left: 20px;
@@ -35,21 +35,21 @@ ul.navbar {
   word-break: break-word;
 }
 ul.navbar li.active {
-  background:linear-gradient(20deg, #FCC9B9, #F08F90);
+  background: Thistle;
   opacity: 0.9;
   margin: 0.1em 0;
   padding: 0.4em;
-  border-right: 1em solid #672422;
+  border-right: 1em solid black;
   height: 110%;
   line-height: 110%;
   font-size: 15px;
 }
 ul.navbar li {
-  background:linear-gradient(20deg, #FCC9B9, #F08F90);
+  background: Thistle;
   opacity: 0.9;
   margin: 0.1em 0;
   padding: 0.4em;
-  border-right: 1em solid #E68364;
+  border-right: 1em solid gray;
   height: 110%;
   line-height: 110%;
   font-size: 15px;
