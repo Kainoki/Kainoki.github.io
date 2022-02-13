@@ -1,5 +1,5 @@
 #headline1 {
-  background: #E3DAC9;
+  background: #EEDC82;
   border-radius: 3px;
   color: black;
   padding-left: 20px;
@@ -39,7 +39,7 @@ ul.navbar li.active {
   border-right: 1em solid black;
 }
 ul.navbar li {
-  background: #E3DAC9;
+  background: #EEDC82;
   margin: 0.2em 0;
   padding: 0.2em;
   border-right: 1em solid gray;
