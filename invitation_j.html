@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>かいのき ツリーバンク</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="headline1">
+<h1>かいのき ツリーバンク &ndash; a parsed corpus of contemporary Japanese</h1>
+</div>
+
+<ul class="navbar">
+<li><a href="index.html">Front page</a><br><a href="front_page_j.html">フロント・ページ</a>
+<li><a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/overview.sh?db=Kainoki">Search interface<br>検索インターフェース</a>
+<li><a href="guide.html">Parsing Guide</a><br><a href="guide_j.html">パーシングガイド</a>
+<li class="active"><a href="invitation.html">An invitation to the user</a><br>統語解析情報付きコーパスのすすめ
+<li><a href="howtofind.html">Example search patterns</a><br><a href="howtofind_j.html">検索パターンの例</a>
+<li><a href="acknowledgements.html">Acknowledgements of support</a><br><a href="acknowledgements_j.html">研究支援について</a>
+<li><a href="whoisEdKainoki.html">Who is Ed Kainoki?</a><br><a href="whoisEdKainoki_j.html">エド・カイノキとは誰ですか？</a>
+<li><a href="contact.html">Contact</a><br><a href="contact_j.html">連絡先</a>
+<li><a href="https://github.com/kainoki/data/releases/tag/release" target="_blank">Download<br>ダウンロード</a>
+<li><a href="https://oncoj.orinst.ox.ac.uk/">Parsed Corpora Portal<br>コーパス・ポータルサイト</a>
+</ul>
+
+<h2><a name="sec1">1</a>&nbsp;&nbsp;&nbsp;統語解析情報付きコーパスのすすめ</h2>
+
+<p>統語解析情報付きコーパスを使わないと出来ないことにはどんなことがあるだろうか？ いま仮に、日本語のテクストの中で馬が行っている事柄をすべて調べたいとする。 すると、「馬」という語が（あるいは「馬」を含む名詞句が）主語として関係づけられている述語を探すことが課題となる。 この場合、「馬が」のような表現はかなり確実に主語と見なしてよいが、それに加えて、「馬は、馬も、馬さえ、馬なら、馬に、馬から、馬の」のように、主語かも知れないがそうでないかも知れない表現も存在する。 さらに、周知のように、「馬が追い手を振りきって、走って、山へ逃げた」のような文では、馬は3つの動詞の主語ではあっても、局所的に関連づけられている述語は一つしかない。 文脈で既に言及されている「馬」と同一照応の代名詞もあるかも知れないので、それらを調べたいこともあるだろう。 のみならず、「鳴く馬」や「しっぽが白い馬」のように、馬について描写を行う表現ではあっても、「馬」の主語としての地位が助詞や語順だけを参照して推論することのできない表現もある。 統語解析情報コーパスを使うと、統語構造や文法役割の規定や意味関係のアノテーションを参照することで、「馬」の語（あるいは、「馬」を含む名詞句および「馬」を指示する代名詞）が主語として関連づけられている述語をすべて検索することができる。</p>
+
+<dl>
+  <dt>(<a name="ex4">4</a>)</dt><dd>笠を手に</dd>
+</dl>
+
+<dl>
+  <dt>(<a name="ex5">5</a>)</dt><dd>笠を手に出かけた</dd>
+</dl>
+
+<p>Expression (<a href="#ex4">4</a>) is interesting because in the sentence there seems to be a missing verb (like 持って) that mediates the relation between 笠を&nbsp;and 手に. Expression  (<a href="#ex4">4</a>) is especially interesting because (unlike  expressions such as 「料理を中心に」or 「首都を皮切りに」) the relation between 笠を&nbsp;and 手に&nbsp;cannot be paraphrased as 「A を&nbsp;B として」. With a parsed corpus, you can search for all the subordinate clauses (<tt>&sol;^IP-ADV&sol;</tt>) that</p>
+<ul>
+<dt>i.</dt><dd>contain an accusative object (<tt>&lt; &sol;^PP-OB1&sol;</tt>)</dd>
+<dt>ii.</dt><dd>a postpositional phrase headed by に (<tt>&lt; (&sol;^PP&sol; &lt; (&sol;^P-ROLE&sol; &lt; に))</tt>)</dd>
+<dt>iii.</dt><dd>nothing else (<tt>!&lt;3 __</tt>)</dd>
+</ul>
+
+<p>This is achieved by the search pattern of (<a href="#ex6">6</a>).</p>
+
+<dl>
+  <dt>(<a name="ex6">6</a>)</dt><dd><tt>&sol;&#94;IP-ADV&sol;&nbsp;&lt;&nbsp;&sol;&#94;PP-OB1&sol;&nbsp;&lt;&nbsp;(&sol;&#94;PP&sol;&nbsp;&lt;&nbsp;(&sol;&#94;P-ROLE&sol;&nbsp;&lt;&nbsp;に))&nbsp;!&lt;3&nbsp;&lowbar;&lowbar;</tt><br></dd>
+</dl>
+
+<form target="_blank" action="https://oncoj.orinst.ox.ac.uk/cgi-bin/search.sh" method="post">
+  <input type="hidden" name="DB" value="Kainoki"/>
+  <input type="hidden" name="ACT" value="tregex"/>
+  <input type="hidden" name="MODE" value="default"/>
+  <input type="hidden" name="search" value="/^IP-ADV/ < /^PP-OB1/ < (/^PP/ < (/^P-ROLE/ < に)) !<3 __"/>
+  <button type="submit" name="submit_param" value="submit_value" class="link-button">Try</button>
+</form>
+
+<p>Click the &lsquo;Try&rsquo; button to see results from the corpus.</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;もう1つ例を挙げる。 「笠を手に出かけた」の文の中の「笠を手に」のような表現に興味があるとする。 この表現が興味深いのは、「笠を」と「手に」との関係を、明示されていない動詞（「持って」のような）が媒介していると思われるからである。 「料理を中心に」や「首都を皮切りに」のような類似の多くの表現は、「A を&nbsp;B として」と言い替えられるのに対し、この表現はそれが出来ないことからなお面白い。 統語解析情報付きコーパスを使うと、このような、(i)従属節で、(ii)述語を欠いており、(iii)対格目的語と「に」を伴う助詞句だけからなるものをすべて検索することができる。 実際のところ、このような表現は非常に稀である。 以下に例をいくつか挙げる:</p>
+
+<p>以上に挙げたのは、統語解析情報付きコーパスで出来て、ブラウザーやコンコーダンサーの検索エンジンでは不可能な事柄のうち、わずかな例にすぎない。 このことは、文の意味について人が解析し、少数の抽象的な原理にもとづいてデータを構成することによって可能となるのである。 日本語の文法に関して、系統立って研究されておらず、統語解析情報付きコーパスが解明の手助けになりそうな問題は数多くある。 それは、統語解析情報付きコーパスは、言語研究者が興味あるものとして取り上げたものばかりでなく、すべての事柄を解析するからである。 実際に NPCMJ を検索して、そこに何があるか見てみることを奨める。</p>
+
+<br>
+<h2><a name="sec2">2</a>&nbsp;&nbsp;&nbsp;文字列の検索</h2>
+
+<p>コーパスを効果的に使用するためには、それに含まれるデータおよびその構成に関する一般的な知識が必要である。 しかし、日本語に関する一般的な知識以上にコーパスに関する背景知識を必要とせずに情報にアクセスするための簡単な方法として、NPCMJ の「文字列検索」とその関連機能がある。 これは非常に強力なツールであり、検索を簡単にして（他のいくつかの検索エンジンと異なり）ワイルド・カードの使用を不要にする。 例えば、現代日本語では単一の語を成さないが、単語の部分の組み合わせとしてテクストに出現する文字列を簡単に検索することができる。 日本語が分かる人なら誰でも、「にはい」という連続する文字列が単一の単語を表すものではないことを知っている。 この文字列を単一の単語として検索しようとしても（すなわち、&lt;wb&gt; で単語の境界を表すと、「&lt;wb&gt; にはい &lt;wb&gt;」を検索しても — これは、文字列検索に &lsquo;Strict&rsquo; のオプションを適用することで行える）、結果として何も得られない。</p>
+
+<p>他方、「にはい」は単語の部分の組み合わせとして（それらが平仮名で書かれているかぎりは）は出現する。 例えば、&lsquo;Character&rsquo; オプションを選んで検索することで、「&lt;wb&gt;に||は||い&lt;wb&gt;」（|| は単語の境界が出現しうることをあらわす）を検索できる。 その結果として、</p>
+<ul>
+<li>「家&lt;wb&gt;に&lt;wb&gt;は&lt;wb&gt;い&lt;wb&gt;ない」 (家には居ない).</li>
+</ul>
+
+<p>が得られる。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;また、 &lsquo;Liberal&rsquo; オプションを選ぶと、検索する表現の最初と最後に単語の境界を前提としない。 すなわち、「||に||は||い||」を検索することになる。 結果として得られるのは、上記のものの他に、以下のような例がある:</p>
+<ul>
+<li>「簡単&lt;wb&gt;に&lt;wb&gt;は&lt;wb&gt;いか&lt;wb&gt;ない」(簡単には行かない)</li>
+<li>「エジプト&lt;wb&gt;に&lt;wb&gt;はいろ&lt;wb&gt;う&lt;wb&gt;と&lt;wb&gt;して」(エジプトに入ろうとして)</li>
+<li>「&lt;wb&gt;わけにはいかない&lt;wb&gt;」</li>
+<li>「屋根&lt;wb&gt;に&lt;wb&gt;はい上がる」(屋根に這い上がる), etc.</li>
+</ul>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&lsquo;Mine&rsquo;  オプションを選ぶと、結果をかなりの程度絞り込むことができる。 1個のスペース（ここでは、アンダースコア &ldquo;_&rdquo; によって表すことになる）を文字列の途中で入力することにより、単語の境界を導入することができる。 例えば、&lsquo;Mine&rsquo; オプションの下で「に_はい」と入力すると、|| に &lt;wb&gt; はい|| を検索することになり、動詞「入る」や「這い」を含む例は出力し、「居る」や「行く」の例を返すことはない。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;文字列検索に当って、&lsquo;Strict&rsquo; オプションを選ぶと、さらに限定された結果が得られることになる。 この場合、最初と最後に単語の境界が置かれることになる。 例えば、このオプションの下で「に_はい」と入力すると、「&lt;wb&gt; に &lt;wb&gt; はい &lt;wb&gt;」を検索する。 現在のところ、その結果として出力される例文は無いが、それはコーパスの中に「に」の後に独立した単語「肺」「灰」「杯」や「這い」が（少くとも平仮名では）直接後続する例文が無いからである。 また、このような結果から、「這いあがる」が単一の単位であること（すなわち、文字列全体が2つの単語でなく単一の語彙項目として分析されること）が分る。 これは有益な情報である。 動詞連用形に後続する生産的な助動詞（「始める、終わる、出す、止む、忘れる」等）が個別の単語として取り扱われる一方で、同様に動詞連用形に後続して、「這い上がる、かき集める、言いふらす、撒き散らす、追いかける」のような語彙的複合語を形作るものもある。 後者の語形については、最初の動詞と後続の動詞の間に単語の境界は存在しない。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;「よくばり検索」を &lsquo;Liberal&rsquo;, &lsquo;Character&rsquo;, &lsquo;Mine&rsquo; および &lsquo;Strict&rsquo; のオプションと組み合わせて行うことによって、より広範囲の結果を得ることができる。 この「よくばり検索」によって、単語の境界に介在することのできる文字数の上限を指定することができる。 文字列「に_はい」について「よくばり検索」のオプションを &lsquo;Character&rsquo; とし、介在できる文字数を1にセットすると、以下のような例を得ることができる:</p>
+<ul>
+<li>「間には悪い感情」,</li>
+<li>「基本的に鬼は怖いもの」,</li>
+<li>「調べるのには向いていない」,</li>
+<li>「活動には狙いが二つ」,</li>
+<li>「チリにはない考え方」,</li>
+<li>「おいしいにはおいしいけれど」, etc.</li>
+</ul>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;介在できる文字数を大きくすると、さらに多くの結果を得ることができる。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;「よくばり検索」におけるオプションの機能は以下の通りである:</p>
+<ul>
+<li>文字列&nbsp;A_BC について &lsquo;Liberal&rsquo; オプションを選ぶと、A と&nbsp;BC の間に&nbsp;n 個の文字が介在する例を検索する（単語の境界をどこにも設定しない）。</li>
+<li>文字&nbsp;A_BC について &lsquo;Character&rsquo; オプションを選ぶと、A と&nbsp;BC の間に&nbsp;n 個の文字が介在する例を検索する（A の後および&nbsp;BC の前に単語の境界を設定する）。</li>
+<li>文字列&nbsp;A_BC について &lsquo;Mine&rsquo; オプションを選ぶと、A と&nbsp;BC の間に&nbsp;n 個の文字が介在する例を検索する（A の前や&nbsp;BC の後に単語の境界を設定しない）。</li>
+<li>文字列&nbsp;A_BC について &lsquo;Strict&rsquo; オプションを選ぶと、A と&nbsp;BC の間に&nbsp;n 個の文字が介在する例を検索する（A および&nbsp;BC に単語の境界を設定する）。</li>
+</ul>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;基本的な「文字列検索」についても「よくばり文字列検索」についても、その検索の原理については、漢字かな書きテクストについてもローマ字化されたテクストについても変わりがない。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;文字列の検索に関しては制約がある。 (i) 入力としてどの表記を採用したかにより結果は制約される（例えば、「うま」「ウマ」「馬」はすべて異なる結果をもたらす）。 (ii) レンマにもとづく検索は出来ない（例えば、「あります」「あれば」「ある」「あった」はすべて同一のレンマ「有る」を持つ形態素を含んでいるが、当該の語が出現する例をすべて得たいのであれば、「あり、アリ、在り、有り、あれ、アレ、在れ、有れ」等の多様な語形式について個々に検索を行う必要がある。 これらの制約は&nbsp;TGrep2 を使用するとかなりの程度克服できる&nbsp;(sectionref:[__tgrepsearch__] 節を参照のこと）。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;このように、文字列検索を使えば特定の文字列を含む文の検索が完全に行える。 しかし、文字列検索がもっとも有用なのは、(i) 文字列がどのように分割されるか、使用者が分らない場合と (ii) 単語の連鎖に対しどのような統語構造が与えられるか、使用者が分らない場合である。 例えば、たまたま文字列「ならでは」が単一の単語としてタグ付けされることを知らなかった場合、&lsquo;Liberal&rsquo; オプションを選んで「なら」「らで」「では」「ならで」「ならでは」「ならではの」のうちどれを検索しても、「ならでは」を含む結果が返される。 また、もしも文字列「に向けて」が文法機能の違いに応じて2つの異なるタグ付けを与えられることを知らなかった場合、&lsquo;Liberal&rsquo; オプションを選んでこの文字列を検索すれば、<tt>(P-ROLE に向けて)</tt> と&nbsp;<tt>(P-ROLE に) (VB 向け) (P-CONN て)</tt> の2つのパターンが得られる （パターンの意義については、下の <a href="#sec3">3</a> 節で論じる）。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;要するに、適格な文字列を入力してコーパスの中にそれに対応するパターンがあれば、何らかの検索結果が返される。 ディフォールトの表示によって、それぞれの例文の諸要素がどのように統語構造を構成しているかが示される。 検索結果の表示をよく見ることにより、コーパス中で形態素がどのように分割されているか、またコーパスの統語構造がどのような特徴を持っているかについて習熟することができる。</p>
+
+<br>
+<h2><a name="sec3">3</a>&nbsp;&nbsp;&nbsp;基本的構造</h2>
+
+<p>本コーパスは第一に、テクストに対し説明を与えたものである。 テクストは、基本的な単位（文および文の断片）に分割される。 基本的単位は、「木」の原理によって統合され、そこでは幹が枝分れしてより小さい部分となり、最終的には葉（テクストの単語）となる。 「木」の代りに、大きな箱が小さな箱を内に含み、もっとも小さい箱にはブロック（テクストの単語）が入っている、と考えてもよい。 どちらのように視覚化しても役に立つ。 数学的なモデルとしてはどちらの視覚化でも同じことになるが、電子化されたテクストで木を表現するもっとも簡単な方法はラベル付きのカッコ（箱の中に箱が入っているという捉え方）である。 他方、木構造について説明する時には木の比喩を用い、祖先::子孫、兄弟姉妹::兄弟姉妹、親::子供、などの（家系樹で用いるような）親族用語を使うことが多い。 ただ1つ木の比喩には困惑させられることがある。 それは、言語学における木は逆さまに、葉（単語）を一番下にして書かれるということである。</p>
+
+<h3><a name="sec3.1">3.1</a>&nbsp;&nbsp;&nbsp;葉から根へ</h3>
+
+<p>まず最初に、木を底辺から構築するにはどうしたらよいかを考えてみよう。 この議論は、NPCMJ において文がどのようにして分析されるかを利用者に理解してもらうために行うのである。 初めに、コーパスの中に存在することが分っている次の文を取り上げてみよう。</p>
+
+<dl>
+  <dt>(<a name="ex7">7</a>)</dt><dd>鈴木さんの言葉はすがすがしくさえあった</dd>
+</dl>
+
+<p>この文は、データとしては第一に文字を一列に並べたものである。 そこで、文全体をオンラインの文字列検索インタフェースで検索することができる。 コーパス中にこの文は1度しかあらわれないので、適切な形で検索するなら、結果としてはただ1つの項目が得られる。 間違った形で検索するなら、何の結果も得られない。 現在のところ、上記の文は単に文字を一列に並べたものにすぎないが、コーパスの中では文は語句へと分割され、それらがノードの下で構造として統合されている。 文字列検索を使ってコーパスの検索を成功させるためには、語句の区切りに文字列がマッチすることが必要である。 その1つのやり方は、"Liberal" かまたは "Character" のオプションを選んで文字列検索を行うことである。 そのどちらを選んでも、文字と文字のすべての間を潜在的な単語の境界と見なすことになる。</p>
+
+<dl>
+  <dt>(<a name="ex8">8</a>)</dt><dd>鈴||木||さ||ん||の||言||葉||は||す||が||す||が||し||く||さ||え||あ||っ||た</dd>
+</dl>
+
+<p>検索の結果、上記の区切りの可能性を満たす例文が1つ得られる。 もう1つの検索のやり方は、文の区切りをコーパスにおけるのと全く同じやり方で行い、"Mine" または "Strict" を条件として選んで検索を行うことである:</p>
+
+<dl>
+  <dt>(<a name="ex9">9</a>)</dt><dd>鈴木さん&lt;wb&gt;の&lt;wb&gt;言葉&lt;wb&gt;は&lt;wb&gt;すがすがしく&lt;wb&gt;さえ&lt;wb&gt;あっ&lt;wb&gt;た</dd>
+</dl>
+
+<p>これによっても、結果として唯一の文が得られる。</p>
+
+<p>コーパス中のデータを単語へと分割するやり方は利用者にとって予想することが容易であろう。 というのは、単語分割は大部分学校文法にもとづいているからである。 学校文法の主要な品詞（名詞、動詞、形容詞、副詞、代名詞、助詞、助動詞等）が別個の区切り（単語）として区別され、そのそれぞれが、当該の単語の品詞名をラベル付けされたノードによって支配されている。</p>
+
+<dl>
+  <dt>(<a name="ex10">10</a>)</dt><dd></dd>
+</dl>
+
+<table border="0" cellpadding="2px">
+  <tr>
+    <td>NPR</td><td>P-ROLE</td><td>N</td><td>P-OPTR</td><td>ADJI</td><td>P-OPTR</td><td>VB2</td><td>AXD</td>
+  </tr>
+  <tr>
+    <td>鈴木さん</td><td> の</td><td>言葉</td><td>は</td><td>すがすがしく</td><td>さえ</td><td>あっ</td><td>た</td>
+  </tr>
+</table>
+
+<p><tt>NPR</tt>（固有名詞）は名詞の下位カテゴリーである。 単語を含むノードは、ラベル付きカッコ記法によって次のように表される:</p>
+
+<dl>
+  <dt>(<a name="ex11">11</a>)</dt><dd></dd>
+</dl>
+<tt>(NPR&nbsp;鈴木さん)</tt><br>
+
+<p><tt>P-ROLE</tt> は文法役割を表す、助詞の下位カテゴリーである:</p>
+
+<dl>
+  <dt>(<a name="ex12">12</a>)</dt><dd></dd>
+</dl>
+<tt>(P-ROLE&nbsp;の)</tt><br>
+
+<p><tt>N</tt> は普通名詞のラベルである:</p>
+
+<dl>
+  <dt>(<a name="ex13">13</a>)</dt><dd></dd>
+</dl>
+<tt>(N&nbsp;言葉)</tt><br>
+
+<p><tt>P-OPTR</tt> は助詞の下位カテゴリーであり、いわゆる「取り立て助詞」を含む:</p>
+
+<dl>
+  <dt>(<a name="ex14">14</a>)</dt><dd></dd>
+</dl>
+<tt>(P-OPTR&nbsp;は)</tt><br>
+
+<p><tt>ADJI</tt> はイー形容詞のカテゴリーであるが、「ーたい」「ーがたい」「ーやすい」「ーにくい」「ーづらい」のような助動詞的用法は含まない。 上記の例における <tt>ADJI</tt> 「すがすがしく」は連用形であるが、この活用情報は単語ノードのラベルには含まれない:</p>
+
+<dl>
+  <dt>(<a name="ex15">15</a>)</dt><dd></dd>
+</dl>
+<tt>(ADJI&nbsp;すがすがしく)</tt><br>
+
+<p><tt>P-OPTR</tt> はまた、用言の連用形の後にもあらわれることができる:</p>
+
+<dl>
+  <dt>(<a name="ex16">16</a>)</dt><dd></dd>
+</dl>
+<tt>(P-OPTR&nbsp;さえ)</tt><br>
+
+<p><tt>VB2</tt> は動詞の下位カテゴリーであり、核となる述語に後続して1つまたはそれ以上の文法機能を果たす。 <tt>VB2</tt> は通常正規の動詞から派生したものであるが、<tt>VB2</tt> として出現する場合は語彙的意味の多くを失う。 ここで、動詞「ある」の語形は、先行する核述語の活用情報を担うための「ダミー」として出現している。 この動詞は実際には連用形（テ／タに接続する活用形）であらわれている:</p>
+
+<dl>
+  <dt>(<a name="ex17">17</a>)</dt><dd></dd>
+</dl>
+<tt>(VB2&nbsp;あっ)</tt><br>
+
+<p><tt>AXD</tt> は、過去テンスを表す助動詞に与えられるカテゴリーである:</p>
+
+<dl>
+  <dt>(<a name="ex18">18</a>)</dt><dd></dd>
+</dl>
+<tt>(AXD&nbsp;た)</tt><br>
+
+<p>それぞれの単語に品詞が与えられると、単語が出現する直接の文脈を参照して、それらがどのような構造を構成するかを推論することが可能になる。 上記の文についてこのことを、単語ごとに、左から右へと行ってみよう。 構造を構築するための基本原理は、主要語（ヘッド）が句を投射し、句の下で他の構成素と結合する、ということである。 これにより、<tt>NPR</tt> は（名詞の下位カテゴリーとして）<tt>NP</tt> （名詞句）を投射する:</p>
+
+<dl>
+  <dt>(<a name="ex19">19</a>)</dt><dd></dd>
+</dl>
+<tt>(NP&nbsp;(NPR&nbsp;鈴木さん))</tt><br>
+
+<p>この <tt>NP</tt> の直後には所有を表す助詞 <tt>P-ROLE</tt> が続き、これが主要語として <tt>PP</tt> を投射する。 言い換えれば、<tt>NP</tt> は後続の <tt>P-ROLE</tt> を補部（complement）として修飾する:</p>
+
+<dl>
+  <dt>(<a name="ex20">20</a>)</dt><dd></dd>
+</dl>
+<tt>(PP&nbsp;(NP&nbsp;(NPR&nbsp;鈴木さん))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;(P-ROLE&nbsp;の))</tt><br>
+
+<p>名詞の直前にあらわれる所有を表す助詞は、通常その名詞の補部を表示する。 これにより、<tt>PP</tt> は、それに後接する <tt>N</tt> が投射する <tt>NP</tt> の内部に含まれる:</p>
+
+<dl>
+  <dt>(<a name="ex21">21</a>)</dt><dd></dd>
+</dl>
+<tt>(NP&nbsp;(PP&nbsp;(NP&nbsp;(NPR&nbsp;鈴木さん))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(P-ROLE&nbsp;の))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;(N&nbsp;言葉))</tt><br>
+
+<p>ここでもまた、後続の <tt>P</tt> は <tt>NP</tt> を補部として取り、その <tt>NP</tt> を含む <tt>PP</tt> を投射する:</p>
+
+<dl>
+  <dt>(<a name="ex22">22</a>)</dt><dd></dd>
+</dl>
+<tt>(PP&nbsp;(NP&nbsp;(PP&nbsp;(NP&nbsp;(NPR&nbsp;鈴木さん))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(P-ROLE&nbsp;の))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(N&nbsp;言葉))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;(P-OPTR&nbsp;は))</tt><br>
+
+<p>焦点を表す助詞が名詞に付加された場合、通常それは（何らかの文法役割によって）述語と関連づけられる。 「は」の直後に続く「すがすがしく」の語はイ形容詞（<tt>ADJI</tt>）の品詞に属する。 これは、動詞、形容詞、およびコピュラ表現という、述語の中核部分を構成する3種類の表現の1つである。 一般に、「述語」とは節（clause）を投射できる、活用を持つカテゴリーのことである。 日本語において述語は単一の語によって構成されることもあるが、様々なタイプの複数の単語の連鎖により形作られることも多い。 今のところは、「すがすがしく」はそれを先行する<tt>PP</tt> を含む節を投射していると考えておく。 節は <tt>IP</tt>（inflectional phrase）とラベル付けされる。</p>
+
+<dl>
+  <dt>(<a name="ex23">23</a>)</dt><dd></dd>
+</dl>
+<tt>(IP&nbsp;(PP&nbsp;(NP&nbsp;(PP&nbsp;(NP&nbsp;(NPR&nbsp;鈴木さん))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(P-ROLE&nbsp;の))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(N&nbsp;言葉))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(P-OPTR&nbsp;は))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;(ADJI&nbsp;すがすがしく))</tt><br>
+
+<p>残りの要素である「さえ」「あっ」「た」は、<tt>ADJI</tt> を中核とする述語の他の部分と見なすことができる。 とりわけ、ここでは過去テンスの形容詞述語「すがすがしかった」が分割され、中核部分が <tt>P-OPTR</tt> 「さえ」により焦点を当てられている。 述語を構成する残りの部分は、中核部分と同一のレベルにあらわれている。</p>
+
+<dl>
+  <dt>(<a name="ex24">24</a>)</dt><dd></dd>
+</dl>
+<tt>(IP&nbsp;(PP&nbsp;(NP&nbsp;(PP&nbsp;(NP&nbsp;(NPR&nbsp;鈴木さん))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(P-ROLE&nbsp;の))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(N&nbsp;言葉))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(P-OPTR&nbsp;は))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;(ADJI&nbsp;すがすがしく)</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;(P-OPTR&nbsp;さえ)</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;(VB2&nbsp;あっ)</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;(AXD&nbsp;た))</tt><br>
+
+<p>結果として得られるのは、文の基本的な統語解析木である。 しかし、必要に応じて、文法機能に関するより多くの情報をノード・ラベルの拡張の形で付け加えることができる。 例えば、<tt>PP</tt> 「鈴木さんの言葉は」は <tt>ADJI</tt> 「すがすがしく」の主語であるが、助詞「は」は主語の文法機能を表示するわけではない。 そのため、この情報を付け加えるために、主語の構成素を <tt>PP-SBJ</tt> とラベル付けする。 構成素が文法機能を果すのは他の要素と結合する時なので、機能の指定は構成素と構成素の結合が行われる句のレベルで行われる。 主語を表す構成素は述語が投射する句の下で述語と結合するので、主語の文法機能のラベル付けが行われるのは節 <tt>IP</tt> のすぐ下となる。 これに対して、<tt>NP</tt> 内部の助詞「の」は限定された数の解釈を伴う機能ーー所有者::被所有者（言葉の音節）、全体::部分（言葉の殆ど）、項::述語（言葉の解釈）、等ーーを伴うにすぎないので、この用法に関する限りは拡張は不要である。 最後に、<tt>IP</tt> はつねに拡張タグを必要とする。 上記の文は、述語で終わる単文の叙述文である。 このような文には <tt>IP-MAT</tt>（inflectional phrase-matrix）のラベルを与える。</p>
+
+<dl>
+  <dt>(<a name="ex25">25</a>)</dt><dd></dd>
+</dl>
+<tt>(IP-MAT&nbsp;(PP-SBJ&nbsp;(NP&nbsp;(PP&nbsp;(NP&nbsp;(NPR&nbsp;鈴木さん))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(P-ROLE&nbsp;の))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(N&nbsp;言葉))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(P-OPTR&nbsp;は))</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(ADJI&nbsp;すがすがしく)</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(P-OPTR&nbsp;さえ)</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(VB2&nbsp;あっ)</tt><br>
+<tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(AXD&nbsp;た))</tt><br>
+
+<p>以上では、比較的単純な文の構造の生成を例として述べた。 しかし、同じ修飾と項・述語関係の原理を再帰的に適用することにより、非常に複雑な構造を作り出すことができる。</p>
+
+<h3><a name="sec3.2">3.2</a>&nbsp;&nbsp;&nbsp;根から葉へ</h3>
+
+<p>次に文についてトップ・ダウン的に、根（ルート）から始めて考えてみよう。 すべての文（および文の断片）はルート・ノードを持っており、それがさらにより小さなノード（通常は複雑な構成を持つ句）へと分割される。 文の断片（典型的には、述語を持たない省略された発話）は、<tt>FRAG</tt> とラベル付けされたルート・ノードを持つ。 これに対し、完全な文は、それが表す発話のタイプに応じてラベル付けされる。 疑問文は <tt>CP-QUE</tt> と、感嘆文は <tt>CP-EXL</tt> と、また疑問意外の終助詞や外置された補足表現を伴う文は <tt>CP-FINAL</tt> とラベル付けされる。 これらの各ノードは典型的には、<tt>IP-SUB</tt> ノードに加えて、後に続く要素 （終助詞や補足表現）を持っている。 残りのルート・ノードは発話のタイプを表示する付加的要素を伴わないもので、これには叙述文（<tt>IP-MAT</tt>）と命令文（<tt>IP-IMP</tt>）がある。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;完全な文は、すべて何らかのタイプの <tt>IP</tt> 節を主文として含んでいるが、その中にさらなる節が埋め込まれることがある。 従属節は <tt>IP-ADV-SCON</tt> のラベルを持っている。 これらの節は通常、述部を修飾して様態または条件を規定する。 並列節のうちで、最後尾の節以外は <tt>IP-ADV-CONJ</tt> のラベルを持っている。 名詞句の構成要素のうち、名詞を直接修飾する節は <tt>IP-REL</tt> または <tt>IP-EMB</tt> とラベル付けされる。 いくつかの例外を除いて、<tt>IP</tt> ノードは何らかの種類の述語を主要部（head）として直接含んでいる。 述語とは、大雑把に定義すると、主語について何事かを述べる、活用を持つ表現のことである。 もっとも多い述語のタイプは、動詞（<tt>VB</tt> とラベル付けされる）のものである。 <tt>IP</tt> の直接下に（すなわち、「直接支配されて」）述語の中核部分の品詞（例えば、<tt>VB</tt>）を表すノードがあらわれ、さらにその品詞ラベルのすぐ下に単語そのもの（テクストの一部をなす文字列）があらわれることが多い。 単語は終端ノードとなる。 また、<tt>IP</tt> の主要部となりうる述語中核部分になることができるのは、 <tt>ADJI</tt>（イ-形容詞）、 <tt>ADJN</tt>（ナ-形容詞）、および [<tt>NP-PRD</tt> + <tt>AX</tt>]（名詞述語にコピュラが後続したもの）である。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;IP の下でその構成要素として出現することのできる句のタイプは一定のものに限られる。 言うまでもなく、上で述べたように、<tt>IP-ADV</tt> は <tt>IP</tt> の下に再帰的にあらわれることができる。 他の主要な句のタイプとしては、 <tt>NP</tt>（裸の名詞句）、 <tt>PP</tt>（助詞句）、 <tt>ADVP</tt>（副詞句）、 <tt>INTJP</tt>（間投詞句）、 <tt>FRAG</tt>（断片）、 <tt>PU</tt>（句読点）がある。 <tt>PU</tt> を除けば、これらの句のどれも、主要部に加えて他の句を含む複雑な句となることがある。</p>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;カッコを用いて与えられた構造を表す場合、「ノード <tt>A</tt> はノード <tt>B</tt> を直接含んでいる」や「ノード <tt>B</tt> はノード <tt>A</tt> に直接含まれている」のように述べてもよいし、また同じ関係を「ノード <tt>A</tt> はノード <tt>B</tt> を直接支配している」とか「ノード <tt>B</tt> はノード <tt>A</tt> に直接支配されている」のように述べてもよい。 木においては、そのような関係は、ルート・ノードに近く、より高い位置にあるノード <tt>A</tt> からより低い位置にありルート・ノードに遠いノード <tt>B</tt> へと枝を描くことで示される。 木は結合された構造である。 すなわち、木の中のすべての要素は、他のすべての要素と枝によって結合されている。 枝は2つの異なる関係を表示する。 すなわち、先行関係と直接支配関係である。 これらの2つの関係を組み合わせることで、木における他のより一般的な関係を定義することができる（例えば、間接的支配関係、直接後続する姉妹関係、ルートによる支配関係、等）。 ノード間の関係を規定するによって、検索表現を作ることができるわけである。 例えば、「食べ」という活用形の動詞を主要部とする疑問文を探したい場合は、「食べ」のノードを直接支配する <tt>VB</tt> を直接支配する <tt>IP-SUB</tt> を直接支配する <tt>CP-QUE</tt> を検索すればよい。</p>
+
+<br>
+<br>
+<br>
+</body>
+</html>
