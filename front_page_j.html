@@ -65,20 +65,54 @@
 <h2>アノテーションについて</h2>
 
 <p>
-<a href="guide_j.html">パーシングガイド</a>ではアノテーションの計画を詳細に説明しています。
+アノテーション方式の詳細は、<a href="guide_j.html">解析ガイド</a>に記述されています。
 </p>
+
+<p>
+単位分割と品詞タグの付与は、純粋に語彙的な要素の中に機能的な要素を取り込むことを避けながら、終端ノードをできるだけ大きくとるという方針に従います。
+これはおおむね、Corpus of Spontaneous Japanese（CSJ; Maekawa 2003）およびBalanced Corpus of Contemporary Written Japanese（BCCWJ; Maekawa et al. 2014）の長単位基準に従っています。
+</p>
+
+Syntactic structure is represented with labelled parentheses in the style of the Penn Treebank (Bies et al. 1995). More particularly, the Penn Historical Corpora scheme (Santorini 2010) has informed the ‘look’ of the annotation. This includes:
+
+<p>
+統語構造は the Penn Treebank（Bies et al. 1995）のスタイルのタグ付き括弧によって表示されます。
+本コーパスでは、特にthe Penn Historical Corpora scheme（Santorini 2010）で提案されたアノテーション方式を採用しています。
+この方式は次のような特徴をもちます：
+</p>
+
+<ul>
+<li>CorpusSeach 形式（Randall 2009）を underlying encoding として採用していること
+<li>動詞句（VP）構造がないこと
+<li>IP、ADVP、NP、PP というタグラベルの使用
+<li>句の並列構造における CONJP レイヤーの表示
+<li>すべての節ノードと節レベルの構成素においてその機能を示していること
+</ul>
+
+<p>
+実際のアノテーションは第一に観察的妥当性を目指すものでなければなりません。
+その目的は、データにおける同定可能な関係・過程に一定の言語学的な分析を示すことです。
+アノテーションはまた、統語的な分析をベースに Treebank Semantics（Butler 2015）の方式を用いて、述語論理に基づく意味表示を生成することも目指しています。
+よって、統語的な分析から意味的な分析を計算するための曖昧性解消情報が加えられています。
+</p>
+
+<p>
+曖昧性解消情報の１つは、節連結のタイプ（つまり、非終結節のタイプ）を特定するための拡張タグであり、
+まず、従属的な節連結に対しては、拡張タグ-SCON (subordinate conjunction) を認めています。
+従属節はその節における空主語の配置、およびより上位の階層の項との照応関係に影響を与えます（これは、「コントロール」と呼ばれる照応計算に従います）。
+このタイプの従属節と区別されるのが、拡張タグ-CONJ (coordinating conjunction) を与えられる等位的な節連結です。
+等位節は他の節と共有される項の配置に影響を与えます（これは，ATB (Across the Board) 抽出と呼ばれる照応計算に従います）。
 
 <h2>検索インターフェイス</h2>
 
 <p>
-かいのきツリーバンクは、アノテーションのほぼすべての側面を使用して検索できる強力な<b><a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/overview.sh?db=Kainoki">interface</a></b>ユーザーと関連付けられています。
-特定検索の結果は、アノテーションデータとしてダウンロードすることができます。
-検索インターフェースとリンクしているソースデータは、改良のため常に分析し更新されています。
+かいのきツリーバンクは、アノテーションのほぼすべての側面を利用することのできる強力な<b><a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/overview.sh?db=Kainoki">検索インターフェース</a></b>をもちます。
+検索結果は、アノテーションされた情報付きのデータとしてダウンロードすることができます。
+検索インターフェースが利用するソースデータは、定期的に修正・アップデートされます。
 </p>
 
 <p>
-例えば検索パターンは、
-<a href="HowToFindConstructions.html">How to find constructions in The Kainoki Treebank</a>を見てください。
+<a href="HowToFindConstructions.html">「検索パターンの例」</a>には、実際の検索で使用できるパターンの例が挙げられています。
 </p>
 
 <h2>研究にコーパスを使う</h2>
