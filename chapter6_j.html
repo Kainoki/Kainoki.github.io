@@ -4179,7 +4179,7 @@
 
 <p align="justify">テアル構文は，意図的な行為の結果について動作主性を背景化して描写するために用いられる，状態的な構文である。</p>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;テアル構文の分析は元の動詞が他動詞か自動詞かによって２つに分かれる。 前者では，元の他動詞の目的語がテアル構文でどのような助詞をとるかという観点からさらに２つに分かれる。 元の動詞の名詞句目的語が助詞「が」をとる場合（または，名詞修飾節において「の」をとる場合）， その名詞句は主語（-SBJ）としてアノテーションされ， <tt>(P-CONN て)</tt> の後にノード <tt>(PASS *)</tt> が導入される。 また，CP-THTがテアル形の伝達動詞（例：「書いてある」）の項として用いられ， 同じ節に明示的な主語が無い場合も， そのような&nbsp;CP-THT は拡張タグ&nbsp;-SBJ を与えられ（<a href="chapter6_j.html#sec6.18.2">6.18.2</a> 節も参照）， 同様に<tt>(PASS *)</tt>ノードが導入される。 このような場合，元の他動詞の主語は完全に抑制され， 元の目的語が主語に昇格していると分析されるわけだが， 他の名詞句の文法的役割（特に，OB2）はテアル構文においても変わることはない。</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;テアル構文の分析は元の動詞が他動詞か自動詞かによって２つに分かれる。 前者では，元の他動詞の目的語がテアル構文でどのような助詞をとるかという観点からさらに２つに分かれる。 元の動詞の名詞句目的語が助詞「が」をとる場合（または，名詞修飾節において「の」をとる場合）， その名詞句は主語（-SBJ）としてアノテーションされ， <tt>(P-CONN て)</tt> の後にノード <tt>(PASS *)</tt> が導入される。 また，CP-THTがテアル形の伝達動詞（例：「書いてある」）の項として用いられ， 同じ節に明示的な主語が無い場合も， そのような&nbsp;CP-THT は拡張タグ&nbsp;-SBJ を与えられ（<a href="chapter6_j.html#sec6.19.2">6.19.2</a> 節も参照）， 同様に<tt>(PASS *)</tt>ノードが導入される。 このような場合，元の他動詞の主語は完全に抑制され， 元の目的語が主語に昇格していると分析されるわけだが， 他の名詞句の文法的役割（特に，OB2）はテアル構文においても変わることはない。</p>
 
 <dl>
   <dt>(<a name="ex6.37">6.37</a>)</dt><dd></dd>
@@ -5400,12 +5400,503 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=2663_dict_vv-lexicon@14,2,18&db=Kainoki" target="_blank">2663_dict_vv-lexicon@14,2,18</a>]</small>
 
 <br>
-<h2><a name="sec6.16">6.16</a>&nbsp;&nbsp;&nbsp;移動の目的を表す節</h2>
+<h2><a name="sec6.16">6.16</a>&nbsp;&nbsp;&nbsp;比較相関構文における「...ば...ほど」タイプの条件節</h2>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;比較相関構文は，従属節Pと主節Qから成り，典型的に「PほどQ」の形式で表される構文である。 この構文では，P節が表す何らかの尺度がQ節が表す別の尺度に相関することを伝える。 P節はとりたて助詞（P-OPTR）「ほど」あるいは「だけ」により投射される従属節（PP-SCON）でアノテートされる。</p>
+
+<dl>
+  <dt>(<a name="ex6.50">6.50</a>)</dt><dd></dd>
+</dl>
+
+<p align="justify">
+<font style="background-color: Wheat;">上空 に 行く ほど</font> 酸素 が 薄く なる 。
+</p>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:exslt="http://exslt.org/common" width="658.68" height="409.5" viewBox="-16.5 17.5 867.24 535">
+  <text x="417.12" y="55" text-anchor="middle">IP-MAT</text>
+  <line x1="417.12" y1="70" x2="214.5" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="417.12" y1="70" x2="506.88" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="417.12" y1="70" x2="647.46" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="417.12" y1="70" x2="741.18" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="417.12" y1="70" x2="803.22" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <rect x="199.5" y="105" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: SandyBrown; stroke-width: 10;"/>
+  <text x="214.5" y="125" text-anchor="middle">PP-SCON</text>
+  <line x1="214.5" y1="140" x2="155.76" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="214.5" y1="140" x2="370.26" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="155.76" y="195" text-anchor="middle">IP-ADV</text>
+  <line x1="155.76" y1="210" x2="46.86" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="155.76" y1="210" x2="171.6" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="155.76" y1="210" x2="280.5" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <text x="46.86" y="265" text-anchor="middle">NP-SBJ</text>
+  <line x1="46.86" y1="280" x2="46.86" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="46.86" y="335" text-anchor="middle">*arb*</text>
+  <text x="171.6" y="265" text-anchor="middle">PP</text>
+  <line x1="171.6" y1="280" x2="124.74" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="171.6" y1="280" x2="202.62" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="124.74" y="335" text-anchor="middle">NP</text>
+  <line x1="124.74" y1="350" x2="124.74" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <text x="124.74" y="405" text-anchor="middle">N</text>
+  <line x1="124.74" y1="420" x2="124.74" y2="450" style="stroke:#000000;stroke-width:2;"/>
+  <text x="124.74" y="475" text-anchor="middle">上空</text>
+  <text x="202.62" y="335" text-anchor="middle">P-ROLE</text>
+  <line x1="202.62" y1="350" x2="202.62" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <text x="202.62" y="405" text-anchor="middle">に</text>
+  <text x="280.5" y="265" text-anchor="middle">VB</text>
+  <line x1="280.5" y1="280" x2="280.5" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="280.5" y="335" text-anchor="middle">行く</text>
+  <rect x="355.26" y="175" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: MediumSpringGreen; stroke-width: 10;"/>
+  <text x="370.26" y="195" text-anchor="middle">P-OPTR</text>
+  <line x1="370.26" y1="210" x2="370.26" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <text x="370.26" y="265" text-anchor="middle">ほど</text>
+  <text x="506.88" y="125" text-anchor="middle">PP-SBJ</text>
+  <line x1="506.88" y1="140" x2="460.02" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="506.88" y1="140" x2="537.9" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="460.02" y="195" text-anchor="middle">NP</text>
+  <line x1="460.02" y1="210" x2="460.02" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <text x="460.02" y="265" text-anchor="middle">N</text>
+  <line x1="460.02" y1="280" x2="460.02" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="460.02" y="335" text-anchor="middle">酸素</text>
+  <text x="537.9" y="195" text-anchor="middle">P-ROLE</text>
+  <line x1="537.9" y1="210" x2="537.9" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <text x="537.9" y="265" text-anchor="middle">が</text>
+  <text x="647.46" y="125" text-anchor="middle">IP-SMC-OB1</text>
+  <line x1="647.46" y1="140" x2="647.46" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="647.46" y="195" text-anchor="middle">ADJI</text>
+  <line x1="647.46" y1="210" x2="647.46" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <text x="647.46" y="265" text-anchor="middle">薄く</text>
+  <text x="741.18" y="125" text-anchor="middle">VB</text>
+  <line x1="741.18" y1="140" x2="741.18" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="741.18" y="195" text-anchor="middle">なる</text>
+  <text x="803.22" y="125" text-anchor="middle">PU</text>
+  <line x1="803.22" y1="140" x2="803.22" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="803.22" y="195" text-anchor="middle">。</text>
+</svg>
+
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=58_textbook_djg_intermediate@2,14&db=Kainoki" target="_blank">58_textbook_djg_intermediate@2,14</a>]</small>
+
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;比較相関構文では，P節の述部が重複することがある。 重複する述部は，P節と別に接続助詞「ば」「なら」等で示される節を投射すると見做され，その重複節はP節の直下に置かれる。 重複節は，ATB抽出を許し，P節の項が重複節に継承されるため，等位節IP-ADV-CONJ（またはPP-CONJ）を用いて示す。</p>
+
+<dl>
+  <dt>(<a name="ex6.51">6.51</a>)</dt><dd></dd>
+</dl>
+
+<p align="justify">
+機械 は <font style="background-color: Wheat;">簡単 で ある なら 簡単 な ほど</font> 壊れ にくい 。
+</p>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:exslt="http://exslt.org/common" width="733.92" height="409.5" viewBox="-16.5 17.5 967.56 535">
+  <text x="467.28" y="55" text-anchor="middle">IP-MAT</text>
+  <line x1="467.28" y1="70" x2="77.88" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="467.28" y1="70" x2="448.14" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="467.28" y1="70" x2="771.54" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="467.28" y1="70" x2="837.54" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="467.28" y1="70" x2="903.54" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <text x="77.88" y="125" text-anchor="middle">PP-SBJ</text>
+  <line x1="77.88" y1="140" x2="31.02" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="77.88" y1="140" x2="108.9" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="31.02" y="195" text-anchor="middle">NP</text>
+  <line x1="31.02" y1="210" x2="31.02" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <text x="31.02" y="265" text-anchor="middle">N</text>
+  <line x1="31.02" y1="280" x2="31.02" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="31.02" y="335" text-anchor="middle">機械</text>
+  <text x="108.9" y="195" text-anchor="middle">P-OPTR</text>
+  <line x1="108.9" y1="210" x2="108.9" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <text x="108.9" y="265" text-anchor="middle">は</text>
+  <rect x="433.14" y="105" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: SandyBrown; stroke-width: 10;"/>
+  <text x="448.14" y="125" text-anchor="middle">PP-SCON</text>
+  <line x1="448.14" y1="140" x2="389.4" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="448.14" y1="140" x2="681.78" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="389.4" y="195" text-anchor="middle">IP-ADV</text>
+  <line x1="389.4" y1="210" x2="319.44" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="389.4" y1="210" x2="522.06" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="389.4" y1="210" x2="592.02" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <rect x="304.44" y="245" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: MediumSpringGreen; stroke-width: 10;"/>
+  <text x="319.44" y="265" text-anchor="middle">PP-CONJ</text>
+  <line x1="319.44" y1="280" x2="260.7" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="319.44" y1="280" x2="424.38" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="260.7" y="335" text-anchor="middle">IP-ADV</text>
+  <line x1="260.7" y1="350" x2="194.7" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="260.7" y1="350" x2="264.66" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="260.7" y1="350" x2="330.66" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <text x="194.7" y="405" text-anchor="middle">ADJN</text>
+  <line x1="194.7" y1="420" x2="194.7" y2="450" style="stroke:#000000;stroke-width:2;"/>
+  <text x="194.7" y="475" text-anchor="middle">簡単</text>
+  <text x="264.66" y="405" text-anchor="middle">AX</text>
+  <line x1="264.66" y1="420" x2="264.66" y2="450" style="stroke:#000000;stroke-width:2;"/>
+  <text x="264.66" y="475" text-anchor="middle">で</text>
+  <text x="330.66" y="405" text-anchor="middle">VB2</text>
+  <line x1="330.66" y1="420" x2="330.66" y2="450" style="stroke:#000000;stroke-width:2;"/>
+  <text x="330.66" y="475" text-anchor="middle">ある</text>
+  <rect x="409.38" y="315" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: MediumSpringGreen; stroke-width: 10;"/>
+  <text x="424.38" y="335" text-anchor="middle">P-CONN</text>
+  <line x1="424.38" y1="350" x2="424.38" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <text x="424.38" y="405" text-anchor="middle">なら</text>
+  <text x="522.06" y="265" text-anchor="middle">ADJN</text>
+  <line x1="522.06" y1="280" x2="522.06" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="522.06" y="335" text-anchor="middle">簡単</text>
+  <text x="592.02" y="265" text-anchor="middle">AX</text>
+  <line x1="592.02" y1="280" x2="592.02" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="592.02" y="335" text-anchor="middle">な</text>
+  <rect x="666.78" y="175" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: MediumSpringGreen; stroke-width: 10;"/>
+  <text x="681.78" y="195" text-anchor="middle">P-OPTR</text>
+  <line x1="681.78" y1="210" x2="681.78" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <text x="681.78" y="265" text-anchor="middle">ほど</text>
+  <text x="771.54" y="125" text-anchor="middle">VB</text>
+  <line x1="771.54" y1="140" x2="771.54" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="771.54" y="195" text-anchor="middle">壊れ</text>
+  <text x="837.54" y="125" text-anchor="middle">AX</text>
+  <line x1="837.54" y1="140" x2="837.54" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="837.54" y="195" text-anchor="middle">にくい</text>
+  <text x="903.54" y="125" text-anchor="middle">PU</text>
+  <line x1="903.54" y1="140" x2="903.54" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="903.54" y="195" text-anchor="middle">。</text>
+</svg>
+
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=5_textbook_djg_intermediate@8,10,18,24&db=Kainoki" target="_blank">5_textbook_djg_intermediate@8,10,18,24</a>]</small>
+
+<dl>
+  <dt>(<a name="ex6.52">6.52</a>)</dt><dd></dd>
+</dl>
+
+<p align="justify">
+日本語 は <font style="background-color: Wheat;">勉強 すれ ば 勉強 する ほど</font> 面白く なり ます 。
+</p>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:exslt="http://exslt.org/common" width="904.2" height="357" viewBox="-16.5 17.5 1194.6 465">
+  <text x="580.8" y="55" text-anchor="middle">IP-MAT</text>
+  <line x1="580.8" y1="70" x2="81.84" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="580.8" y1="70" x2="506.88" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="580.8" y1="70" x2="912.78" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="580.8" y1="70" x2="1006.5" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="580.8" y1="70" x2="1068.54" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="580.8" y1="70" x2="1130.58" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <text x="81.84" y="125" text-anchor="middle">PP-SBJ</text>
+  <line x1="81.84" y1="140" x2="34.98" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="81.84" y1="140" x2="116.82" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="34.98" y="195" text-anchor="middle">NP</text>
+  <line x1="34.98" y1="210" x2="34.98" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <text x="34.98" y="265" text-anchor="middle">N</text>
+  <line x1="34.98" y1="280" x2="34.98" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="34.98" y="335" text-anchor="middle">日本語</text>
+  <text x="116.82" y="195" text-anchor="middle">P-OPTR</text>
+  <line x1="116.82" y1="210" x2="116.82" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <text x="116.82" y="265" text-anchor="middle">は</text>
+  <rect x="491.88" y="105" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: SandyBrown; stroke-width: 10;"/>
+  <text x="506.88" y="125" text-anchor="middle">PP-SCON</text>
+  <line x1="506.88" y1="140" x2="448.14" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="506.88" y1="140" x2="791.34" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="448.14" y="195" text-anchor="middle">IP-ADV</text>
+  <line x1="448.14" y1="210" x2="210.54" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="448.14" y1="210" x2="304.26" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="448.14" y1="210" x2="475.86" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="448.14" y1="210" x2="631.62" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="448.14" y1="210" x2="697.62" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <text x="210.54" y="265" text-anchor="middle">NP-SBJ</text>
+  <line x1="210.54" y1="280" x2="210.54" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="210.54" y="335" text-anchor="middle">*arb*</text>
+  <text x="304.26" y="265" text-anchor="middle">NP-OB1</text>
+  <line x1="304.26" y1="280" x2="304.26" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="304.26" y="335" text-anchor="middle">*pro*</text>
+  <rect x="460.86" y="245" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: MediumSpringGreen; stroke-width: 10;"/>
+  <text x="475.86" y="265" text-anchor="middle">IP-ADV-CONJ</text>
+  <line x1="475.86" y1="280" x2="382.14" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="475.86" y1="280" x2="448.14" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="475.86" y1="280" x2="541.86" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="382.14" y="335" text-anchor="middle">VB</text>
+  <line x1="382.14" y1="350" x2="382.14" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <text x="382.14" y="405" text-anchor="middle">勉強</text>
+  <text x="448.14" y="335" text-anchor="middle">VB0</text>
+  <line x1="448.14" y1="350" x2="448.14" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <text x="448.14" y="405" text-anchor="middle">すれ</text>
+  <rect x="526.86" y="315" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: MediumSpringGreen; stroke-width: 10;"/>
+  <text x="541.86" y="335" text-anchor="middle">P-CONN</text>
+  <line x1="541.86" y1="350" x2="541.86" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <text x="541.86" y="405" text-anchor="middle">ば</text>
+  <text x="631.62" y="265" text-anchor="middle">VB</text>
+  <line x1="631.62" y1="280" x2="631.62" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="631.62" y="335" text-anchor="middle">勉強</text>
+  <text x="697.62" y="265" text-anchor="middle">VB0</text>
+  <line x1="697.62" y1="280" x2="697.62" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="697.62" y="335" text-anchor="middle">する</text>
+  <rect x="776.34" y="175" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: MediumSpringGreen; stroke-width: 10;"/>
+  <text x="791.34" y="195" text-anchor="middle">P-OPTR</text>
+  <line x1="791.34" y1="210" x2="791.34" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <text x="791.34" y="265" text-anchor="middle">ほど</text>
+  <text x="912.78" y="125" text-anchor="middle">IP-SMC-OB1</text>
+  <line x1="912.78" y1="140" x2="912.78" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="912.78" y="195" text-anchor="middle">ADJI</text>
+  <line x1="912.78" y1="210" x2="912.78" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <text x="912.78" y="265" text-anchor="middle">面白く</text>
+  <text x="1006.5" y="125" text-anchor="middle">VB</text>
+  <line x1="1006.5" y1="140" x2="1006.5" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1006.5" y="195" text-anchor="middle">なり</text>
+  <text x="1068.54" y="125" text-anchor="middle">AX</text>
+  <line x1="1068.54" y1="140" x2="1068.54" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1068.54" y="195" text-anchor="middle">ます</text>
+  <text x="1130.58" y="125" text-anchor="middle">PU</text>
+  <line x1="1130.58" y1="140" x2="1130.58" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1130.58" y="195" text-anchor="middle">。</text>
+</svg>
+
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=3_textbook_djg_intermediate@8,14,19,25&db=Kainoki" target="_blank">3_textbook_djg_intermediate@8,14,19,25</a>]</small>
+
+<p align="justify">なお，述部の重複では，VBやADJI，ADJNなどの主たる述語を含む場合と含まない場合がある。 主たる述語を含まない場合，つまり軽動詞（VB0）や補助動詞（VB2）などの語のみが重複する場合は，それらの要素のみが等位節に置かれる。</p>
+
+<dl>
+  <dt>(<a name="ex6.53">6.53</a>)</dt><dd></dd>
+</dl>
+
+<p align="justify">
+<font style="background-color: Wheat;">なん でも 、 練習 すれ ば する ほど</font> 上手 に なる 。
+</p>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:exslt="http://exslt.org/common" width="980.43" height="357" viewBox="-16.5 17.5 1296.24 465">
+  <text x="631.62" y="55" text-anchor="middle">IP-MAT</text>
+  <line x1="631.62" y1="70" x2="46.86" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="631.62" y1="70" x2="499.62" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="631.62" y1="70" x2="1022.34" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="631.62" y1="70" x2="1170.18" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="631.62" y1="70" x2="1232.22" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <text x="46.86" y="125" text-anchor="middle">NP-SBJ</text>
+  <line x1="46.86" y1="140" x2="46.86" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="46.86" y="195" text-anchor="middle">*arb*</text>
+  <rect x="484.62" y="105" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: SandyBrown; stroke-width: 10;"/>
+  <text x="499.62" y="125" text-anchor="middle">PP-SCON</text>
+  <line x1="499.62" y1="140" x2="440.88" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="499.62" y1="140" x2="846.78" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="440.88" y="195" text-anchor="middle">IP-ADV</text>
+  <line x1="440.88" y1="210" x2="140.58" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="440.88" y1="210" x2="273.24" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="440.88" y1="210" x2="390.06" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="440.88" y1="210" x2="452.1" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="440.88" y1="210" x2="588.72" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="440.88" y1="210" x2="741.18" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <text x="140.58" y="265" text-anchor="middle">NP-OB1</text>
+  <line x1="140.58" y1="280" x2="140.58" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="140.58" y="335" text-anchor="middle">*pro*</text>
+  <text x="273.24" y="265" text-anchor="middle">NP;*OB1*</text>
+  <line x1="273.24" y1="280" x2="226.38" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="273.24" y1="280" x2="312.18" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="226.38" y="335" text-anchor="middle">WPRO</text>
+  <line x1="226.38" y1="350" x2="226.38" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <text x="226.38" y="405" text-anchor="middle">なん</text>
+  <text x="312.18" y="335" text-anchor="middle">P-OPTR</text>
+  <line x1="312.18" y1="350" x2="312.18" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <text x="312.18" y="405" text-anchor="middle">でも</text>
+  <text x="390.06" y="265" text-anchor="middle">PU</text>
+  <line x1="390.06" y1="280" x2="390.06" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="390.06" y="335" text-anchor="middle">、</text>
+  <text x="452.1" y="265" text-anchor="middle">VB</text>
+  <line x1="452.1" y1="280" x2="452.1" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="452.1" y="335" text-anchor="middle">練習</text>
+  <rect x="573.72" y="245" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: MediumSpringGreen; stroke-width: 10;"/>
+  <text x="588.72" y="265" text-anchor="middle">IP-ADV-CONJ</text>
+  <line x1="588.72" y1="280" x2="529.98" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="588.72" y1="280" x2="635.58" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <rect x="514.98" y="315" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: MediumSpringGreen; stroke-width: 10;"/>
+  <text x="529.98" y="335" text-anchor="middle">VB0</text>
+  <line x1="529.98" y1="350" x2="529.98" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <text x="529.98" y="405" text-anchor="middle">すれ</text>
+  <rect x="620.58" y="315" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: MediumSpringGreen; stroke-width: 10;"/>
+  <text x="635.58" y="335" text-anchor="middle">P-CONN</text>
+  <line x1="635.58" y1="350" x2="635.58" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <text x="635.58" y="405" text-anchor="middle">ば</text>
+  <rect x="726.18" y="245" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: MediumSpringGreen; stroke-width: 10;"/>
+  <text x="741.18" y="265" text-anchor="middle">VB0</text>
+  <line x1="741.18" y1="280" x2="741.18" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="741.18" y="335" text-anchor="middle">する</text>
+  <rect x="831.78" y="175" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: MediumSpringGreen; stroke-width: 10;"/>
+  <text x="846.78" y="195" text-anchor="middle">P-OPTR</text>
+  <line x1="846.78" y1="210" x2="846.78" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <text x="846.78" y="265" text-anchor="middle">ほど</text>
+  <text x="1022.34" y="125" text-anchor="middle">IP-SMC-OB1</text>
+  <line x1="1022.34" y1="140" x2="952.38" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="1022.34" y1="140" x2="1038.18" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="1022.34" y1="140" x2="1108.14" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="952.38" y="195" text-anchor="middle">PP-OB1</text>
+  <line x1="952.38" y1="210" x2="952.38" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <text x="952.38" y="265" text-anchor="middle">*pro*</text>
+  <text x="1038.18" y="195" text-anchor="middle">ADJN</text>
+  <line x1="1038.18" y1="210" x2="1038.18" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1038.18" y="265" text-anchor="middle">上手</text>
+  <text x="1108.14" y="195" text-anchor="middle">AX</text>
+  <line x1="1108.14" y1="210" x2="1108.14" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1108.14" y="265" text-anchor="middle">に</text>
+  <text x="1170.18" y="125" text-anchor="middle">VB</text>
+  <line x1="1170.18" y1="140" x2="1170.18" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1170.18" y="195" text-anchor="middle">なる</text>
+  <text x="1232.22" y="125" text-anchor="middle">PU</text>
+  <line x1="1232.22" y1="140" x2="1232.22" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1232.22" y="195" text-anchor="middle">。</text>
+</svg>
+
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=214_textbook_particles@4,17,18,20,22,24&db=Kainoki" target="_blank">214_textbook_particles@4,17,18,20,22,24</a>]</small>
+
+<dl>
+  <dt>(<a name="ex6.54">6.54</a>)</dt><dd></dd>
+</dl>
+
+<p align="justify">
+<font style="background-color: Wheat;">長く 見 て いれ ば いる ほど</font> いくら でも 新しい 美しさ を 発見 する 事 が できる はず の もの で ある 。
+</p>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:exslt="http://exslt.org/common" width="1675.41" height="619.5" viewBox="-16.5 17.5 2222.88 815">
+  <text x="1094.94" y="55" text-anchor="middle">IP-MAT</text>
+  <line x1="1094.94" y1="70" x2="46.86" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="1094.94" y1="70" x2="1044.78" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="1094.94" y1="70" x2="2026.86" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="1094.94" y1="70" x2="2092.86" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="1094.94" y1="70" x2="2158.86" y2="100" style="stroke:#000000;stroke-width:2;"/>
+  <text x="46.86" y="125" text-anchor="middle">NP-SBJ</text>
+  <line x1="46.86" y1="140" x2="46.86" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="46.86" y="195" text-anchor="middle">*pro*</text>
+  <text x="1044.78" y="125" text-anchor="middle">NP-PRD</text>
+  <line x1="1044.78" y1="140" x2="1013.76" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="1044.78" y1="140" x2="1964.82" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1013.76" y="195" text-anchor="middle">IP-EMB</text>
+  <line x1="1013.76" y1="210" x2="140.58" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="1013.76" y1="210" x2="562.32" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="1013.76" y1="210" x2="1030.92" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="1013.76" y1="210" x2="1432.2" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="1013.76" y1="210" x2="1774.74" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="1013.76" y1="210" x2="1840.74" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="1013.76" y1="210" x2="1902.78" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <text x="140.58" y="265" text-anchor="middle">NP-SBJ</text>
+  <line x1="140.58" y1="280" x2="140.58" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="140.58" y="335" text-anchor="middle">*exp*</text>
+  <rect x="547.32" y="245" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: SandyBrown; stroke-width: 10;"/>
+  <text x="562.32" y="265" text-anchor="middle">PP-SCON</text>
+  <line x1="562.32" y1="280" x2="503.58" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="562.32" y1="280" x2="878.46" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="503.58" y="335" text-anchor="middle">IP-ADV</text>
+  <line x1="503.58" y1="350" x2="234.3" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="503.58" y1="350" x2="320.1" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="503.58" y1="350" x2="390.06" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="503.58" y1="350" x2="467.94" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="503.58" y1="350" x2="620.4" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="503.58" y1="350" x2="772.86" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <text x="234.3" y="405" text-anchor="middle">NP-OB1</text>
+  <line x1="234.3" y1="420" x2="234.3" y2="450" style="stroke:#000000;stroke-width:2;"/>
+  <text x="234.3" y="475" text-anchor="middle">*pro*</text>
+  <text x="320.1" y="405" text-anchor="middle">ADVP</text>
+  <line x1="320.1" y1="420" x2="320.1" y2="450" style="stroke:#000000;stroke-width:2;"/>
+  <text x="320.1" y="475" text-anchor="middle">ADJI</text>
+  <line x1="320.1" y1="490" x2="320.1" y2="520" style="stroke:#000000;stroke-width:2;"/>
+  <text x="320.1" y="545" text-anchor="middle">長く</text>
+  <text x="390.06" y="405" text-anchor="middle">VB</text>
+  <line x1="390.06" y1="420" x2="390.06" y2="450" style="stroke:#000000;stroke-width:2;"/>
+  <text x="390.06" y="475" text-anchor="middle">見</text>
+  <text x="467.94" y="405" text-anchor="middle">P-CONN</text>
+  <line x1="467.94" y1="420" x2="467.94" y2="450" style="stroke:#000000;stroke-width:2;"/>
+  <text x="467.94" y="475" text-anchor="middle">て</text>
+  <rect x="605.4" y="385" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: MediumSpringGreen; stroke-width: 10;"/>
+  <text x="620.4" y="405" text-anchor="middle">IP-ADV-CONJ</text>
+  <line x1="620.4" y1="420" x2="561.66" y2="450" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="620.4" y1="420" x2="667.26" y2="450" style="stroke:#000000;stroke-width:2;"/>
+  <rect x="546.66" y="455" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: MediumSpringGreen; stroke-width: 10;"/>
+  <text x="561.66" y="475" text-anchor="middle">VB2</text>
+  <line x1="561.66" y1="490" x2="561.66" y2="520" style="stroke:#000000;stroke-width:2;"/>
+  <text x="561.66" y="545" text-anchor="middle">いれ</text>
+  <rect x="652.26" y="455" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: MediumSpringGreen; stroke-width: 10;"/>
+  <text x="667.26" y="475" text-anchor="middle">P-CONN</text>
+  <line x1="667.26" y1="490" x2="667.26" y2="520" style="stroke:#000000;stroke-width:2;"/>
+  <text x="667.26" y="545" text-anchor="middle">ば</text>
+  <rect x="757.86" y="385" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: MediumSpringGreen; stroke-width: 10;"/>
+  <text x="772.86" y="405" text-anchor="middle">VB2</text>
+  <line x1="772.86" y1="420" x2="772.86" y2="450" style="stroke:#000000;stroke-width:2;"/>
+  <text x="772.86" y="475" text-anchor="middle">いる</text>
+  <rect x="863.46" y="315" width="30" height="30" rx="10" ry="10" style="fill: none; stroke: MediumSpringGreen; stroke-width: 10;"/>
+  <text x="878.46" y="335" text-anchor="middle">P-OPTR</text>
+  <line x1="878.46" y1="350" x2="878.46" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <text x="878.46" y="405" text-anchor="middle">ほど</text>
+  <text x="1030.92" y="265" text-anchor="middle">PP;*OB1*</text>
+  <line x1="1030.92" y1="280" x2="984.06" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="1030.92" y1="280" x2="1077.78" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="984.06" y="335" text-anchor="middle">NP</text>
+  <line x1="984.06" y1="350" x2="984.06" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <text x="984.06" y="405" text-anchor="middle">NUMCLP</text>
+  <line x1="984.06" y1="420" x2="984.06" y2="450" style="stroke:#000000;stroke-width:2;"/>
+  <text x="984.06" y="475" text-anchor="middle">WNUM</text>
+  <line x1="984.06" y1="490" x2="984.06" y2="520" style="stroke:#000000;stroke-width:2;"/>
+  <text x="984.06" y="545" text-anchor="middle">いくら</text>
+  <text x="1077.78" y="335" text-anchor="middle">P-OPTR</text>
+  <line x1="1077.78" y1="350" x2="1077.78" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1077.78" y="405" text-anchor="middle">でも</text>
+  <text x="1432.2" y="265" text-anchor="middle">PP-OB1</text>
+  <line x1="1432.2" y1="280" x2="1385.34" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="1432.2" y1="280" x2="1692.9" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1385.34" y="335" text-anchor="middle">NP</text>
+  <line x1="1385.34" y1="350" x2="1358.28" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="1385.34" y1="350" x2="1618.98" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1358.28" y="405" text-anchor="middle">IP-EMB</text>
+  <line x1="1358.28" y1="420" x2="1292.28" y2="450" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="1358.28" y1="420" x2="1490.94" y2="450" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="1358.28" y1="420" x2="1556.94" y2="450" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1292.28" y="475" text-anchor="middle">PP-OB1</text>
+  <line x1="1292.28" y1="490" x2="1245.42" y2="520" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="1292.28" y1="490" x2="1413.06" y2="520" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1245.42" y="545" text-anchor="middle">NP</text>
+  <line x1="1245.42" y1="560" x2="1210.44" y2="590" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="1245.42" y1="560" x2="1331.22" y2="590" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1210.44" y="615" text-anchor="middle">IP-REL</text>
+  <line x1="1210.44" y1="630" x2="1171.5" y2="660" style="stroke:#000000;stroke-width:2;"/>
+  <line x1="1210.44" y1="630" x2="1257.3" y2="660" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1171.5" y="685" text-anchor="middle">NP-SBJ</text>
+  <line x1="1171.5" y1="700" x2="1171.5" y2="730" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1171.5" y="755" text-anchor="middle">*T*</text>
+  <text x="1257.3" y="685" text-anchor="middle">ADJI</text>
+  <line x1="1257.3" y1="700" x2="1257.3" y2="730" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1257.3" y="755" text-anchor="middle">新しい</text>
+  <text x="1331.22" y="615" text-anchor="middle">N</text>
+  <line x1="1331.22" y1="630" x2="1331.22" y2="660" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1331.22" y="685" text-anchor="middle">美しさ</text>
+  <text x="1413.06" y="545" text-anchor="middle">P-ROLE</text>
+  <line x1="1413.06" y1="560" x2="1413.06" y2="590" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1413.06" y="615" text-anchor="middle">を</text>
+  <text x="1490.94" y="475" text-anchor="middle">VB</text>
+  <line x1="1490.94" y1="490" x2="1490.94" y2="520" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1490.94" y="545" text-anchor="middle">発見</text>
+  <text x="1556.94" y="475" text-anchor="middle">VB0</text>
+  <line x1="1556.94" y1="490" x2="1556.94" y2="520" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1556.94" y="545" text-anchor="middle">する</text>
+  <text x="1618.98" y="405" text-anchor="middle">N</text>
+  <line x1="1618.98" y1="420" x2="1618.98" y2="450" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1618.98" y="475" text-anchor="middle">事</text>
+  <text x="1692.9" y="335" text-anchor="middle">P-ROLE</text>
+  <line x1="1692.9" y1="350" x2="1692.9" y2="380" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1692.9" y="405" text-anchor="middle">が</text>
+  <text x="1774.74" y="265" text-anchor="middle">VB</text>
+  <line x1="1774.74" y1="280" x2="1774.74" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1774.74" y="335" text-anchor="middle">できる</text>
+  <text x="1840.74" y="265" text-anchor="middle">FN</text>
+  <line x1="1840.74" y1="280" x2="1840.74" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1840.74" y="335" text-anchor="middle">はず</text>
+  <text x="1902.78" y="265" text-anchor="middle">AX</text>
+  <line x1="1902.78" y1="280" x2="1902.78" y2="310" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1902.78" y="335" text-anchor="middle">の</text>
+  <text x="1964.82" y="195" text-anchor="middle">N</text>
+  <line x1="1964.82" y1="210" x2="1964.82" y2="240" style="stroke:#000000;stroke-width:2;"/>
+  <text x="1964.82" y="265" text-anchor="middle">もの</text>
+  <text x="2026.86" y="125" text-anchor="middle">AX</text>
+  <line x1="2026.86" y1="140" x2="2026.86" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="2026.86" y="195" text-anchor="middle">で</text>
+  <text x="2092.86" y="125" text-anchor="middle">VB2</text>
+  <line x1="2092.86" y1="140" x2="2092.86" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="2092.86" y="195" text-anchor="middle">ある</text>
+  <text x="2158.86" y="125" text-anchor="middle">PU</text>
+  <line x1="2158.86" y1="140" x2="2158.86" y2="170" style="stroke:#000000;stroke-width:2;"/>
+  <text x="2158.86" y="195" text-anchor="middle">。</text>
+</svg>
+
+<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=54_aozora_Terada-1921@8,19,20,22,24,26&db=Kainoki" target="_blank">54_aozora_Terada-1921@8,19,20,22,24,26</a>]</small>
+
+<br>
+<h2><a name="sec6.17">6.17</a>&nbsp;&nbsp;&nbsp;移動の目的を表す節</h2>
 
 <p align="justify">移動動詞は，移動の目的を表す動作名詞句あるいは連用節を伴うことがある。 名詞句は動作名詞（例えば，「買い物」）——「遊び」のような動詞派生の動作名詞を含めて——を主要部とし，助詞「に」が続く。 連用節は動作動詞を主要部とした&nbsp;IP-NMZ に助詞「に」が続く。 この，「に」は拡張タグ -PRP を伴う&nbsp;PP を投射する。</p>
 
 <dl>
-  <dt>(<a name="ex6.50">6.50</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.55">6.55</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -5474,7 +5965,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=237_textbook_TANAKA@14,15,18&db=Kainoki" target="_blank">237_textbook_TANAKA@14,15,18</a>]</small>
 
 <dl>
-  <dt>(<a name="ex6.51">6.51</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.56">6.56</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -5627,7 +6118,7 @@
 <p align="justify">移動の目的を表す連用節の場合，移動動詞の主語が連用節のコントロールの先行詞となる場合が多い。 ただし，「行かせる」や「派遣する」のように移動動詞が使役述語となるときは，主語でない項が目的を表す節の主語をコントロールすることもある。</p>
 
 <dl>
-  <dt>(<a name="ex6.52">6.52</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.57">6.57</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -5741,9 +6232,9 @@
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;移動の目的を表す句が動作名詞を主要部とするとき，項構造をもつことはない。</p>
 
 <br>
-<h2><a name="sec6.17">6.17</a>&nbsp;&nbsp;&nbsp;間接疑問文および関連する構文</h2>
+<h2><a name="sec6.18">6.18</a>&nbsp;&nbsp;&nbsp;間接疑問文および関連する構文</h2>
 
-<h3><a name="sec6.17.1">6.17.1</a>&nbsp;&nbsp;&nbsp;項としての間接疑問文</h3>
+<h3><a name="sec6.18.1">6.18.1</a>&nbsp;&nbsp;&nbsp;項としての間接疑問文</h3>
 
 <p align="justify">典型的な間接疑問文では，疑問節（CP-QUE）が格助詞（P-ROLE）を後接させた形で現れ，それを受ける述語が上位の節に存在する。 疑問節が主要文法役割を果たす場合は，疑問節（CP-QUE）を支配する助詞句（PP）に適切な拡張タグが加えられる。以下にいくつかの例を挙げる。</p>
 <ul>
@@ -5751,7 +6242,7 @@
 </ul>
 
 <dl>
-  <dt>(<a name="ex6.53">6.53</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.58">6.58</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -5855,7 +6346,7 @@
 </ul>
 
 <dl>
-  <dt>(<a name="ex6.54">6.54</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.59">6.59</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -6015,7 +6506,7 @@
 </ul>
 
 <dl>
-  <dt>(<a name="ex6.55">6.55</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.60">6.60</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -6145,7 +6636,7 @@
 </ul>
 
 <dl>
-  <dt>(<a name="ex6.56">6.56</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.61">6.61</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -6303,7 +6794,7 @@
 </ul>
 
 <dl>
-  <dt>(<a name="ex6.57">6.57</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.62">6.62</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -6483,7 +6974,7 @@
 </ul>
 
 <dl>
-  <dt>(<a name="ex6.58">6.58</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.63">6.63</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -6569,7 +7060,7 @@
 </ul>
 
 <dl>
-  <dt>(<a name="ex6.59">6.59</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.64">6.64</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -6648,7 +7139,7 @@
 <p align="justify">また，格助詞もとりたて助詞も伴わない裸の疑問文（CP-QUE）の中には，格助詞「が」や「を」等を補っても不自然でない例がある。 その場合，拡張タグは CP-QUE に直接加えられる。 ただし，同格的な疑問文はさらに特別のアノテーションを必要とする（次節を参照）。</p>
 
 <dl>
-  <dt>(<a name="ex6.60">6.60</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.65">6.65</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -6757,7 +7248,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=22_ted_talk_10@2&db=Kainoki" target="_blank">22_ted_talk_10@2</a>]</small>
 
 <dl>
-  <dt>(<a name="ex6.61">6.61</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.66">6.66</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -6827,14 +7318,14 @@
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=710_textbook_purple_intermediate@5&db=Kainoki" target="_blank">710_textbook_purple_intermediate@5</a>]</small>
 
-<h3><a name="sec6.17.2">6.17.2</a>&nbsp;&nbsp;&nbsp;同格的な間接疑問文</h3>
+<h3><a name="sec6.18.2">6.18.2</a>&nbsp;&nbsp;&nbsp;同格的な間接疑問文</h3>
 
 <p align="justify">裸の疑問節には，上位の節の述語と名詞項の両方と密接な関係を持つものがある。 このような文では，名詞項を潜伏疑問と解釈することができる。 ただし，疑問節（CP-QUE）と潜伏疑問と解釈される名詞の間に隣接性の条件はないため，両者の間の同格関係を示すために， <tt>*ICH*</tt>（Interpret Constituent Here）と&nbsp;PRN のタグを利用する。</p>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;以下の例では，疑問節「芸術界で今何が起こっているか」は述語「分かる」の第一目的語であると解釈できる（「が」を補うことができる）。 同時に，その後に現れた第一目的語名詞句「動向（が）」は意味的にその前の疑問節と関係していると解釈できる。 アノテーションとしては，まず適切な番号を付けた&nbsp;PRN （通常は PRN-1）の下に&nbsp;CP-QUE を置く。 次に，名詞句（NP）の下の，該当する名詞（N）の姉妹位置に&nbsp;PRN を加え，その子ノードとして同じ番号を付けた <tt>*ICH*</tt>（通常は <tt>*ICH*-1</tt>）を置く。</p>
 
 <dl>
-  <dt>(<a name="ex6.62">6.62</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.67">6.67</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -6970,7 +7461,7 @@
 <p align="justify">疑問節と結びつく名詞句の主要部が代名詞であったり，指示詞的な限定詞によって修飾されることもある。</p>
 
 <dl>
-  <dt>(<a name="ex6.63">6.63</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.68">6.68</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -7098,7 +7589,7 @@
 <p align="justify">また，「見当がつく」，「意見が分かれる」，「議論をする」といった表現と共に用いられた時のように， 疑問節（CP-QUE）を述語が直接受けるわけではないが， 「見当」「意見」「議論」といった名詞の内容が疑問節（CP-QUE）によって示されるような例がある。 このような場合にも，上記と同じように <tt>*ICH*</tt>， PRN のタグを利用する。</p>
 
 <dl>
-  <dt>(<a name="ex6.64">6.64</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.69">6.69</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -7205,12 +7696,12 @@
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=44_fiction-locked_POTTER-1902@7,6,35,32&db=Kainoki" target="_blank">44_fiction-locked_POTTER-1902@7,6,35,32</a>]</small>
 
-<h3><a name="sec6.17.3">6.17.3</a>&nbsp;&nbsp;&nbsp;副詞的な疑問節（CP-QUE-ADV）</h3>
+<h3><a name="sec6.18.3">6.18.3</a>&nbsp;&nbsp;&nbsp;副詞的な疑問節（CP-QUE-ADV）</h3>
 
 <p align="justify">典型的な間接疑問文とは異なり，それを受ける述語が上位の節に存在せず， また，格助詞もとりたて助詞も補うことのできない場合，CP-QUE には拡張タグ&nbsp;ADV を加える。 このような副詞的な疑問節（CP-QUE-ADV）は多くの場合，自問的である。</p>
 
 <dl>
-  <dt>(<a name="ex6.65">6.65</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.70">6.70</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -7311,7 +7802,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=350_aozora_Kunieda-1925@2&db=Kainoki" target="_blank">350_aozora_Kunieda-1925@2</a>]</small>
 
 <dl>
-  <dt>(<a name="ex6.66">6.66</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.71">6.71</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -7456,7 +7947,7 @@
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;裸の疑問節（CP-QUE）が副詞的に用いられているのか，項なのか判断に迷う場合がある。 例えば，以下の例の疑問節は「を」を補い「間違いがないかどうかを見直してください」とすることができるので， 疑問節が第一目的語となっていると考え， CP-QUE-OB1 のラベルを与えてもいいように思われる。 しかし，この例は（「を」を伴わない）疑問節の他に，「を」を伴う明らかな第一目的語「書類（を）」を含んでおり，また，疑問節と名詞が同格的でもない。 したがって&nbsp;CP-QUE の方には&nbsp;ADV の拡張タグを与えることになる。 ただし，上で示した例とは異なり，この場合の副詞的な疑問節は必ずしも自問的なものではない。</p>
 
 <dl>
-  <dt>(<a name="ex6.67">6.67</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.72">6.72</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -7538,12 +8029,12 @@
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=3069_dict_vv-lexicon@5&db=Kainoki" target="_blank">3069_dict_vv-lexicon@5</a>]</small>
 
-<h3><a name="sec6.17.4">6.17.4</a>&nbsp;&nbsp;&nbsp;述語としての疑問節（CP-QUE-PRD）</h3>
+<h3><a name="sec6.18.4">6.18.4</a>&nbsp;&nbsp;&nbsp;述語としての疑問節（CP-QUE-PRD）</h3>
 
 <p align="justify">疑問節（CP-QUE）はコピュラ（AX）「だ」「です」等を後続させて述語として用いられることがある。 この場合は，CP-QUE のラベルに拡張タグ&nbsp;PRD を加える。</p>
 
 <dl>
-  <dt>(<a name="ex6.68">6.68</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.73">6.73</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -7648,7 +8139,7 @@
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=69_ted_talk_1@15,45&db=Kainoki" target="_blank">69_ted_talk_1@15,45</a>]</small>
 
-<h3><a name="sec6.17.5">6.17.5</a>&nbsp;&nbsp;&nbsp;引用された疑問節</h3>
+<h3><a name="sec6.18.5">6.18.5</a>&nbsp;&nbsp;&nbsp;引用された疑問節</h3>
 
 <p align="justify">疑問節（CP-QUE）に補文助詞（P-COMP）「と」等が後続することがある。 このような「引用」の疑問文は，多くの場合伝達動詞や認識動詞の補部となる。</p>
 <ul>
@@ -7656,7 +8147,7 @@
 </ul>
 
 <dl>
-  <dt>(<a name="ex6.69">6.69</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.74">6.74</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -7749,7 +8240,7 @@
 </ul>
 
 <dl>
-  <dt>(<a name="ex6.70">6.70</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.75">6.75</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -7814,13 +8305,13 @@
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=82_spoken_JF15@9,19&db=Kainoki" target="_blank">82_spoken_JF15@9,19</a>]</small>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;また，「という」「との」等の補文助詞（P-COMP）は疑問節（CP-QUE）に後続し，名詞修飾節を作る（例 (<a href="#ex3.30">3.30</a>) も参照）。</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;また，「という」「との」等の補文助詞（P-COMP）は疑問節（CP-QUE）に後続し，名詞修飾節を作る（例 (<a href="chapter3_j.html#ex3.30">3.30</a>) も参照）。</p>
 <ul>
 <li>CP-QUE + という</li>
 </ul>
 
 <dl>
-  <dt>(<a name="ex6.71">6.71</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.76">6.76</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -7942,14 +8433,14 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=9_book_excerpt-30@10,45&db=Kainoki" target="_blank">9_book_excerpt-30@10,45</a>]</small>
 
 <br>
-<h2><a name="sec6.18">6.18</a>&nbsp;&nbsp;&nbsp;様々な補部節（CP-THT）</h2>
+<h2><a name="sec6.19">6.19</a>&nbsp;&nbsp;&nbsp;様々な補部節（CP-THT）</h2>
 
-<h3><a name="sec6.18.1">6.18.1</a>&nbsp;&nbsp;&nbsp;伝達動詞・認識動詞の補部としての補部節</h3>
+<h3><a name="sec6.19.1">6.19.1</a>&nbsp;&nbsp;&nbsp;伝達動詞・認識動詞の補部としての補部節</h3>
 
 <p align="justify">典型的には，補部節（CP-THT）は，「と」等の補文助詞（P-COMP）を伴って， 伝達動詞（言う，伝える，等）や認識動詞（思う，考える，等）の補部となることができる。 この場合，補部節は拡張タグ&nbsp;OB1 を与えられる。 このような補部節は，実際の発話を直接引用したと解釈できるものもあれば，そうでないものもある。</p>
 
 <dl>
-  <dt>(<a name="ex6.72">6.72</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.77">6.77</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -8047,7 +8538,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=211_fiction_DICK-1952@2,29&db=Kainoki" target="_blank">211_fiction_DICK-1952@2,29</a>]</small>
 
 <dl>
-  <dt>(<a name="ex6.73">6.73</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.78">6.78</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -8159,7 +8650,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=1260_misc_JSeM_beta_150530@10,40&db=Kainoki" target="_blank">1260_misc_JSeM_beta_150530@10,40</a>]</small>
 
 <dl>
-  <dt>(<a name="ex6.74">6.74</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.79">6.79</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -8272,7 +8763,7 @@
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=155_aozora_Joyce-1914@4,30&db=Kainoki" target="_blank">155_aozora_Joyce-1914@4,30</a>]</small>
 
-<h3><a name="sec6.18.2">6.18.2</a>&nbsp;&nbsp;&nbsp;項としての補部節</h3>
+<h3><a name="sec6.19.2">6.19.2</a>&nbsp;&nbsp;&nbsp;項としての補部節</h3>
 
 <p align="justify">補部節（CP-THT）が格助詞を伴って主要文法役割を果たす項となった例も，それほど頻度は高くないものの，存在する。 以下の例ではそれぞれ，補部節に格助詞「が」と「を」が後続している。 このような場合は，格助詞の投射する助詞句（PP）に適宜，-SBJ あるいは&nbsp;-OB1 の拡張タグを加える。</p>
 <ul>
@@ -8280,7 +8771,7 @@
 </ul>
 
 <dl>
-  <dt>(<a name="ex6.75">6.75</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.80">6.80</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -8436,7 +8927,7 @@
 </ul>
 
 <dl>
-  <dt>(<a name="ex6.76">6.76</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.81">6.81</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -8670,7 +9161,7 @@
 </ul>
 
 <dl>
-  <dt>(<a name="ex6.77">6.77</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.82">6.82</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -8735,7 +9226,7 @@
 </ul>
 
 <dl>
-  <dt>(<a name="ex6.78">6.78</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.83">6.83</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -8839,7 +9330,7 @@
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;受動の「られ・れ」を後続させた伝達動詞・認識動詞が，補部節（CP-THT）と共起している文では，主語が明示されないことが多い。 そのため，何を文の主語と考えるべきかしばしば判断に迷う。 以下の例では，補部節によって示された伝達内容の受け手が主語であると考え（「[私が]8時までに来いと言われた」）， ゼロ代名詞（<tt>*speaker*</tt>）を主語として補うことができる。</p>
 
 <dl>
-  <dt>(<a name="ex6.79">6.79</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.84">6.84</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -8930,7 +9421,7 @@
 <p align="justify">しかし，以下の例では，具体的な伝達内容の受け手がいるとは考えられず，故に，これを主語とした受動文だとは考えにくい。 また，他に主語と見なすべき名詞句も存在しない。 このような場合には，補部節を主語であると考え，CP-THT に&nbsp;-SBJ の拡張タグを加えることにする。</p>
 
 <dl>
-  <dt>(<a name="ex6.80">6.80</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.85">6.85</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -9008,7 +9499,7 @@
 <p align="justify">伝達動詞・認識動詞が補部節（CP-THT）と共にテアル構文で用いられた場合も，主語と見なすべき名詞句が明確に存在しない場合には，補部節を主語としてアノテーションすることにする。</p>
 
 <dl>
-  <dt>(<a name="ex6.81">6.81</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.86">6.86</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -9113,12 +9604,12 @@
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=31_spoken_JF6@11,,30,32,34&db=Kainoki" target="_blank">31_spoken_JF6@11,,30,32,34</a>]</small>
 
-<h3><a name="sec6.18.3">6.18.3</a>&nbsp;&nbsp;&nbsp;同格的な補部節</h3>
+<h3><a name="sec6.19.3">6.19.3</a>&nbsp;&nbsp;&nbsp;同格的な補部節</h3>
 
 <p align="justify">疑問節（CP-QUE）と同様に，補部節（CP-THT）も，上位の節の述語とその項である名詞句の両方と意味的に結びつくことがある。 例えば，以下の例の補部節（CP-THT）は，述語となった認識動詞「聞きます」の補部であるが，同時に，第一目的語（OB1）となった名詞句「話（を）」の内容を表している。 このような補部節（CP-THT）と名詞句の同格関係を示すために，同格の疑問節（CP-QUE）で用いたように，<tt>*ICH*</tt> と PRN-n（n は適切な番号）を用いる。</p>
 
 <dl>
-  <dt>(<a name="ex6.82">6.82</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.87">6.87</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -9310,7 +9801,7 @@
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;補部節と結びつく名詞句の主要部が代名詞であったり，指示詞的な限定詞によって修飾されたりすることもある。</p>
 
 <dl>
-  <dt>(<a name="ex6.83">6.83</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.88">6.88</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -9422,7 +9913,7 @@
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;また，述語が補部節（CP-THT）を直接受けるわけではないが， 補部節と述語の項となった名詞句の間に，上記と同様の同格関係が認められる例がある。 この場合にも，<tt>*ICH*</tt> と&nbsp;PRN-n のタグを利用する。</p>
 
 <dl>
-  <dt>(<a name="ex6.84">6.84</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.89">6.89</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -9527,12 +10018,12 @@
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=128_aozora_Kunieda-1925@6,5,22,26&db=Kainoki" target="_blank">128_aozora_Kunieda-1925@6,5,22,26</a>]</small>
 
-<h3><a name="sec6.18.4">6.18.4</a>&nbsp;&nbsp;&nbsp;目的を表す補部節(CP-THT-PRP)</h3>
+<h3><a name="sec6.19.4">6.19.4</a>&nbsp;&nbsp;&nbsp;目的を表す補部節(CP-THT-PRP)</h3>
 
 <p align="justify">補部節（CP-THT）が同じ節の述語の項でなく，また，節中の他の名詞との意味的な結びつきももたない場合がある。 こうした場合のうち，補部節に意志を表す助動詞（AX）の「よう・う」あるいは否定的意志を表す助動詞（NEG）「まい」が含まれ， かつ補部節が同じ節の述語の動作の目的を表す場合は， CP-THT に特別の拡張タグ&nbsp;PRP を加える（PRP&nbsp;は，次節で見る拡張タグ&nbsp;ADV の特殊なものと言える）。</p>
 
 <dl>
-  <dt>(<a name="ex6.85">6.85</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.90">6.90</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -9782,7 +10273,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=63_aozora_Joyce-1914@64,99&db=Kainoki" target="_blank">63_aozora_Joyce-1914@64,99</a>]</small>
 
 <dl>
-  <dt>(<a name="ex6.86">6.86</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.91">6.91</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -9883,12 +10374,12 @@
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=1028_textbook_particles@20,32&db=Kainoki" target="_blank">1028_textbook_particles@20,32</a>]</small>
 
-<h3><a name="sec6.18.5">6.18.5</a>&nbsp;&nbsp;&nbsp;副詞的な補部節(CP-THT-ADV)</h3>
+<h3><a name="sec6.19.5">6.19.5</a>&nbsp;&nbsp;&nbsp;副詞的な補部節(CP-THT-ADV)</h3>
 
 <p align="justify">補部節（CP-THT）が上位の節の述語とも直接的に結びつかず，また，文中の名詞との意味的な結びつきもなく， また，行為の目的を表すものでもない場合，それは，副詞的な働きを持つ補部節として，ADV の拡張タグを加えられる。</p>
 
 <dl>
-  <dt>(<a name="ex6.87">6.87</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.92">6.92</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -9974,12 +10465,12 @@
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=2586_dict_vv-lexicon@8&db=Kainoki" target="_blank">2586_dict_vv-lexicon@8</a>]</small>
 
-<h3><a name="sec6.18.6">6.18.6</a>&nbsp;&nbsp;&nbsp;述語としての補部節（CP-THT-PRD）</h3>
+<h3><a name="sec6.19.6">6.19.6</a>&nbsp;&nbsp;&nbsp;述語としての補部節（CP-THT-PRD）</h3>
 
 <p align="justify">補部節（CP-THT）にコピュラを含む助動詞（AX）が後続し，補部節自体が述語となっていると見なされるとき，CP-THT に拡張タグ&nbsp;PRD を加える。</p>
 
 <dl>
-  <dt>(<a name="ex6.88">6.88</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.93">6.93</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -10087,7 +10578,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=399_textbook_djg_intermediate@15,44&db=Kainoki" target="_blank">399_textbook_djg_intermediate@15,44</a>]</small>
 
 <dl>
-  <dt>(<a name="ex6.89">6.89</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.94">6.94</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -10215,16 +10706,16 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=423_aozora_Doyle-1905@4,50&db=Kainoki" target="_blank">423_aozora_Doyle-1905@4,50</a>]</small>
 
 <br>
-<h2><a name="sec6.19">6.19</a>&nbsp;&nbsp;&nbsp;目的語繰り上げ構文</h2>
+<h2><a name="sec6.20">6.20</a>&nbsp;&nbsp;&nbsp;目的語繰り上げ構文</h2>
 
 <p align="justify">目的語繰り上げ構文において，補部節あるいは小節の論理的主語は助詞「を」により表示され， 主節の中で，この節を選択する述語の姉妹の位置を占める。 この論理的主語は拡張タグ&nbsp;DOB1 を与えられる。</p>
 
-<h3><a name="sec6.19.1">6.19.1</a>&nbsp;&nbsp;&nbsp;補部節からの繰り上げ</h3>
+<h3><a name="sec6.20.1">6.20.1</a>&nbsp;&nbsp;&nbsp;補部節からの繰り上げ</h3>
 
 <p align="justify">この文型において，補部節は&nbsp;CP-THT-OB1 が支配する&nbsp;IP-SMCとして分析され， その中の主語位置は主節&nbsp;中の&nbsp;DOB1 がコントロールする。</p>
 
 <dl>
-  <dt>(<a name="ex6.90">6.90</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.95">6.95</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -10294,7 +10785,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=374_aozora_Natsume-1908@8,14,16,17&db=Kainoki" target="_blank">374_aozora_Natsume-1908@8,14,16,17</a>]</small>
 
 <dl>
-  <dt>(<a name="ex6.91">6.91</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.96">6.96</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -10372,7 +10863,7 @@
 <p align="justify">主節述部は「思う」や「考える」「感じる」のような態度動詞であるのが普通だが， 「する」や「扱う」のような動詞が用いられることもある。</p>
 
 <dl>
-  <dt>(<a name="ex6.92">6.92</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.97">6.97</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -10426,12 +10917,12 @@
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=30_misc_EXAMPLE@4,8,10,11,18&db=Kainoki" target="_blank">30_misc_EXAMPLE@4,8,10,11,18</a>]</small>
 
-<h3><a name="sec6.19.2">6.19.2</a>&nbsp;&nbsp;&nbsp;小節からの繰り上げ</h3>
+<h3><a name="sec6.20.2">6.20.2</a>&nbsp;&nbsp;&nbsp;小節からの繰り上げ</h3>
 
 <p align="justify">この構文で小節に現れる述語は，イ形容詞，形容詞的屈折を行うモーダル，あるいはコピュラに限られる。 これらはいずれも連用形で現れる。 埋め込まれた節は&nbsp;IP-SMC-OB1 のタグを与えられ，CP-THT をさらに投射することはない。</p>
 
 <dl>
-  <dt>(<a name="ex6.93">6.93</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.98">6.98</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -10500,7 +10991,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=697_textbook_purple_basic@4,17,19&db=Kainoki" target="_blank">697_textbook_purple_basic@4,17,19</a>]</small>
 
 <dl>
-  <dt>(<a name="ex6.94">6.94</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.99">6.99</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -10655,7 +11146,7 @@
 <p align="justify">これらの構文は自発・可能用法の「れる・られる」を伴う述語で頻繁に用いられる。</p>
 
 <dl>
-  <dt>(<a name="ex6.95">6.95</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.100">6.100</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -10759,7 +11250,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=249_aozora_Edogawa-1929@4,10,14,39&db=Kainoki" target="_blank">249_aozora_Edogawa-1929@4,10,14,39</a>]</small>
 
 <dl>
-  <dt>(<a name="ex6.96">6.96</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.101">6.101</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -10949,16 +11440,16 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=37_aozora_Edogawa-1929@30,55,57,64&db=Kainoki" target="_blank">37_aozora_Edogawa-1929@30,55,57,64</a>]</small>
 
 <br>
-<h2><a name="sec6.20">6.20</a>&nbsp;&nbsp;&nbsp;主語繰り上げ構文</h2>
+<h2><a name="sec6.21">6.21</a>&nbsp;&nbsp;&nbsp;主語繰り上げ構文</h2>
 
 <p align="justify">主語繰り上げ構文は目的語繰り上げ構文を受動化したものである。 この場合も，埋め込まれた節を&nbsp;IP-SMC とし，コントロール関係を維持する。 繰り上げられた主語は拡張タグ&nbsp;DSBJ を与えられる。</p>
 
-<h3><a name="sec6.20.1">6.20.1</a>&nbsp;&nbsp;&nbsp;補部節から主語位置に至る繰り上げ</h3>
+<h3><a name="sec6.21.1">6.21.1</a>&nbsp;&nbsp;&nbsp;補部節から主語位置に至る繰り上げ</h3>
 
 <p align="justify">この文型において，補部節は&nbsp;CP-THT-SBJ が支配する&nbsp;IP-SMC として分析され， その中の主語位置は主節中の&nbsp;DSBJ がコントロールする。</p>
 
 <dl>
-  <dt>(<a name="ex6.97">6.97</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.102">6.102</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -11015,7 +11506,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=31_misc_EXAMPLE@4,10,11&db=Kainoki" target="_blank">31_misc_EXAMPLE@4,10,11</a>]</small>
 
 <dl>
-  <dt>(<a name="ex6.98">6.98</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.103">6.103</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -11103,12 +11594,12 @@
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=2991_dict_vv-lexicon@4,18,19&db=Kainoki" target="_blank">2991_dict_vv-lexicon@4,18,19</a>]</small>
 
-<h3><a name="sec6.20.2">6.20.2</a>&nbsp;&nbsp;&nbsp;小節から主語位置に至る繰り上げ</h3>
+<h3><a name="sec6.21.2">6.21.2</a>&nbsp;&nbsp;&nbsp;小節から主語位置に至る繰り上げ</h3>
 
 <p align="justify">この構文で小節に現れる述語は，イ形容詞，形容詞的屈折を行うモーダル，あるいはコピュラに限られる。 これらはいずれも連用形で現れる。 埋め込まれた節は&nbsp;IP-SMC-SBJ のタグを与えられ，CP-THT をさらに投射することはない。</p>
 
 <dl>
-  <dt>(<a name="ex6.99">6.99</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.104">6.104</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -11225,7 +11716,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=7_essay_tosanikki_20171104@37,43,44&db=Kainoki" target="_blank">7_essay_tosanikki_20171104@37,43,44</a>]</small>
 
 <dl>
-  <dt>(<a name="ex6.100">6.100</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.105">6.105</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -11404,18 +11895,18 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=31_aozora_Sakaguchi-1950@6,18,37&db=Kainoki" target="_blank">31_aozora_Sakaguchi-1950@6,18,37</a>]</small>
 
 <br>
-<h2><a name="sec6.21">6.21</a>&nbsp;&nbsp;&nbsp;会話特有の表現</h2>
+<h2><a name="sec6.22">6.22</a>&nbsp;&nbsp;&nbsp;会話特有の表現</h2>
 
 <p align="justify">この節では，会話に特有の表現がどのようにアノテートされているかについて説明する。</p>
 
-<h3><a name="sec6.21.1">6.21.1</a>&nbsp;&nbsp;&nbsp;間投詞句（INTJP）</h3>
+<h3><a name="sec6.22.1">6.22.1</a>&nbsp;&nbsp;&nbsp;間投詞句（INTJP）</h3>
 
 <p align="justify">間投詞のための品詞タグは，INTJ である。</p>
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;INTJ とラベル付けされた個々の単語は， たとえ節のレベルの構成素であっても&nbsp;INTJP を投射することはない。</p>
 
 <dl>
-  <dt>(<a name="ex6.101">6.101</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.106">6.106</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -11475,7 +11966,7 @@
 <tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(PU&nbsp;。))</tt><br>
 
 <dl>
-  <dt>(<a name="ex6.102">6.102</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.107">6.107</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -11562,7 +12053,7 @@
 <p align="justify">以下の実例では，「見えるかいって」というCP-THTが，全体として，間投句的に振る舞っている。</p>
 
 <dl>
-  <dt>(<a name="ex6.103">6.103</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.108">6.108</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -11798,7 +12289,7 @@
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;INTJ やINTJP の並列は，CONJP（ <a href="chapter3_j.html#sec3.5">3.5</a> 節を参照）によってなされるのではなく，単なる並置によってなされる。</p>
 
 <dl>
-  <dt>(<a name="ex6.104">6.104</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.109">6.109</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -11852,7 +12343,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=45_spoken_JM10@3,7,9,11&db=Kainoki" target="_blank">45_spoken_JM10@3,7,9,11</a>]</small>
 
 <dl>
-  <dt>(<a name="ex6.105">6.105</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.110">6.110</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -11933,12 +12424,12 @@
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=579_aozora_Doyle-1905@3,5&db=Kainoki" target="_blank">579_aozora_Doyle-1905@3,5</a>]</small>
 
-<h3><a name="sec6.21.2">6.21.2</a>&nbsp;&nbsp;&nbsp;言い誤り（FS）</h3>
+<h3><a name="sec6.22.2">6.22.2</a>&nbsp;&nbsp;&nbsp;言い誤り（FS）</h3>
 
 <p align="justify">FS は言い誤りを示し，特に発話データにおいて，繰り返しや言い直しなどが生じた場合に用いられる。</p>
 
 <dl>
-  <dt>(<a name="ex6.106">6.106</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.111">6.111</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -11992,7 +12483,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=41_aozora_Kunieda-1925@5,10&db=Kainoki" target="_blank">41_aozora_Kunieda-1925@5,10</a>]</small>
 
 <dl>
-  <dt>(<a name="ex6.107">6.107</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.112">6.112</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -12130,7 +12621,7 @@
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=46_ted_talk_3@2&db=Kainoki" target="_blank">46_ted_talk_3@2</a>]</small>
 
-<h3><a name="sec6.21.3">6.21.3</a>&nbsp;&nbsp;&nbsp;省略</h3>
+<h3><a name="sec6.22.3">6.22.3</a>&nbsp;&nbsp;&nbsp;省略</h3>
 
 <p align="justify">種々の省略は，会話体のテキストに（それだけに限らないのではあるが）よく見られる。 以下，これらの省略のアノテーションの仕方をまとめる。</p>
 
@@ -12139,7 +12630,7 @@
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;NPの文法役割（主要なものであれ，そうでないものであれ）を示す助詞が省略された場合， そのようなNPには，NP-SBJ や&nbsp;NP-OB1 のように， 文法役割が直接タグ付けされる。</p>
 
 <dl>
-  <dt>(<a name="ex6.108">6.108</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.113">6.113</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -12178,7 +12669,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=968_textbook_kisonihongo@5&db=Kainoki" target="_blank">968_textbook_kisonihongo@5</a>]</small>
 
 <dl>
-  <dt>(<a name="ex6.109">6.109</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.114">6.114</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -12221,7 +12712,7 @@
 <p align="justify">主要文法役割は任意文法役割に優先する。 以下の例の「あいつ」については，（PP-TPC を投射する）話題標識「は」が省略されていると考えることができる一方で， 主語&nbsp;-SBJ の文法役割も果たしている。 このとき，タグ&nbsp;-SBJ が優先され，-TPC は付加されない。</p>
 
 <dl>
-  <dt>(<a name="ex6.110">6.110</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.115">6.115</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -12276,7 +12767,7 @@
 <p align="justify">以下は真正な&nbsp;NP-TPC の例である：</p>
 
 <dl>
-  <dt>(<a name="ex6.111">6.111</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.116">6.116</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -12318,14 +12809,14 @@
 
 <p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;IP-ADV における主要部の省略に関する議論については&nbsp;<a href="chapter6_j.html#sec6.4">6.4</a> 節を参照のこと。</p>
 
-<h3><a name="sec6.21.4">6.21.4</a>&nbsp;&nbsp;&nbsp;付け足し</h3>
+<h3><a name="sec6.22.4">6.22.4</a>&nbsp;&nbsp;&nbsp;付け足し</h3>
 
 <p align="justify">ある句や句の連なりが，述語クラスタの直後，あるいは文末助詞の後ろに，外置されることがある。 このとき，それらの句は，ギャップのある文を補う付け足し(afterthought)と見なされる。</p>
 
-<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;主節に対して何かしらの文法役割をもった句が外置される場合， 当該句は文本体と&nbsp;*ICH*&nbsp;を用いたインデクス付与によって関係づけられる （ <a href="chapter1_j.html#sec1.4">1.4</a> 節を参照）。 すなわち，外置された句が本来あるべき場所に，インデクスを伴う<tt>*ICH*</tt>を置き， それを支配するノードのラベルとして，外置された句の主要タグと（あれば）拡張タグをともに指定し （例 (<a href="#ex6.112">6.112</a>) では，<tt>(PP-SBJ *ICH*-1)</tt> ）， 外置された句自体に対しては，主要タグとインデクスのみを指定する （例 (<a href="#ex6.112">6.112</a>) では，<tt>(PP-1 神戸は)</tt>）。</p>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;主節に対して何かしらの文法役割をもった句が外置される場合， 当該句は文本体と&nbsp;*ICH*&nbsp;を用いたインデクス付与によって関係づけられる （ <a href="chapter1_j.html#sec1.4">1.4</a> 節を参照）。 すなわち，外置された句が本来あるべき場所に，インデクスを伴う<tt>*ICH*</tt>を置き， それを支配するノードのラベルとして，外置された句の主要タグと（あれば）拡張タグをともに指定し （例 (<a href="chapter6_j.html#ex6.117">6.117</a>) では，<tt>(PP-SBJ *ICH*-1)</tt> ）， 外置された句自体に対しては，主要タグとインデクスのみを指定する （例 (<a href="chapter6_j.html#ex6.117">6.117</a>) では，<tt>(PP-1 神戸は)</tt>）。</p>
 
 <dl>
-  <dt>(<a name="ex6.112">6.112</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.117">6.117</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -12392,7 +12883,7 @@ ___*ICH*-1 美しい 街 です よ 、 <font style="background-color: Wheat;">�
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=989_textbook_kisonihongo@19,4,3&db=Kainoki" target="_blank">989_textbook_kisonihongo@19,4,3</a>]</small>
 
 <dl>
-  <dt>(<a name="ex6.113">6.113</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.118">6.118</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -12457,7 +12948,7 @@ ___*ICH*-1 来 た 、 来 た 、 <font style="background-color: Wheat;">バス
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=990_textbook_kisonihongo@18,4,3&db=Kainoki" target="_blank">990_textbook_kisonihongo@18,4,3</a>]</small>
 
 <dl>
-  <dt>(<a name="ex6.114">6.114</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.119">6.119</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -12522,7 +13013,7 @@ ___*ICH*-1 来 た 、 来 た 、 <font style="background-color: Wheat;">バス
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=3_news_KAHOKU_55@13,7,8&db=Kainoki" target="_blank">3_news_KAHOKU_55@13,7,8</a>]</small>
 
 <dl>
-  <dt>(<a name="ex6.115">6.115</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.120">6.120</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -12599,12 +13090,12 @@ ___*ICH*-1 ___*ICH*-2 ―― どう です 、 <font style="background-color: Wh
 <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=594_aozora_Oda-1976-2@16,3,4,5,6,21&db=Kainoki" target="_blank">594_aozora_Oda-1976-2@16,3,4,5,6,21</a>]</small>
 
-<h3><a name="sec6.21.5">6.21.5</a>&nbsp;&nbsp;&nbsp;縮約</h3>
+<h3><a name="sec6.22.5">6.22.5</a>&nbsp;&nbsp;&nbsp;縮約</h3>
 
 <p align="justify">２つの形態素の間で縮約が生じる場合，当該の語形のタグ付けは，２者のうち全体の意味にとって決定的な方（典型的には２番目の要素）のタグをとる。 これにより，「てる（&lt; ている）」，「ちゃう（&lt; てしまう）」，「てく（&lt; ていく）」，「とく（&lt; ておく）」 は全て&nbsp;VB2 とラベル付けされる。 以下に例を挙げる。</p>
 
 <dl>
-  <dt>(<a name="ex6.116">6.116</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.121">6.121</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
@@ -12687,7 +13178,7 @@ ___*ICH*-1 ___*ICH*-2 ―― どう です 、 <font style="background-color: Wh
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<small>[<a href="https://oncoj.orinst.ox.ac.uk/cgi-bin/analysis.sh?file=992_textbook_kisonihongo@15&db=Kainoki" target="_blank">992_textbook_kisonihongo@15</a>]</small>
 
 <dl>
-  <dt>(<a name="ex6.117">6.117</a>)</dt><dd></dd>
+  <dt>(<a name="ex6.122">6.122</a>)</dt><dd></dd>
 </dl>
 
 <p align="justify">
